@@ -136,42 +136,73 @@
     /* ============ SIDE RAIL (vertical nav) ============ */
     .side-rail {
       position: fixed;
-      right: 18px;
+      right: 22px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 200;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 10px 8px;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      gap: 4px;
-      box-shadow: var(--shadow-sm);
+      align-items: flex-end;
+      gap: 16px;
+      padding: 0;
     }
     .side-rail-item {
-      padding: 10px 12px;
-      border: 1px solid transparent;
-      border-radius: 11px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 2px 0;
+      border: none;
       background: transparent;
-      color: var(--muted);
-      font-family: inherit;
-      font-size: 11.5px;
-      font-weight: 600;
-      text-align: center;
-      white-space: nowrap;
       cursor: pointer;
-      transition: 0.18s;
-      line-height: 1.3;
+      font-family: inherit;
     }
-    .side-rail-item:hover { color: var(--ink-soft); }
-    .side-rail-item.active {
+    .side-rail-bar {
+      display: block;
+      width: 5px;
+      height: 30px;
+      border-radius: 999px;
+      background: #cdd8d2;
+      transition: height 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+      flex-shrink: 0;
+    }
+    .side-rail-item:hover .side-rail-bar {
+      background: #a8bdb2;
+    }
+    .side-rail-item.active .side-rail-bar {
+      width: 6px;
+      height: 34px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(47, 143, 107, 0.45);
+    }
+    .side-rail-item.active:hover .side-rail-bar {
+      background: var(--accent);
+    }
+    .side-rail-label {
+      position: absolute;
+      right: calc(100% + 14px);
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      white-space: nowrap;
+      padding: 11px 20px;
+      background: #fff;
+      border: 1px solid rgba(47, 143, 107, 0.14);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--accent);
-      border-color: rgba(47, 143, 107, 0.22);
-      background: var(--accent-soft);
+      letter-spacing: -0.01em;
+      box-shadow: 0 10px 28px -8px rgba(47, 143, 107, 0.18);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    }
+    .side-rail-item:hover .side-rail-label,
+    .side-rail-item:focus-visible .side-rail-label {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
     }
 
     .brand-logo { height: 34px; width: auto; display: block; }
@@ -510,16 +541,16 @@
     }
     .solution-head {
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       flex-shrink: 0;
       position: relative;
       z-index: 1;
     }
     .solution-head h2 {
-      font-size: clamp(24px, 2.9vw, 34px);
+      font-size: clamp(30px, 3.6vw, 44px);
       font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.3;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
       margin: 0;
       color: var(--ink);
     }
@@ -537,7 +568,7 @@
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       box-shadow: 0 8px 28px -18px rgba(29, 35, 48, 0.18);
       display: flex;
       flex-direction: column;
@@ -546,60 +577,56 @@
     .sol-card-head {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 14px;
+      margin-bottom: 14px;
     }
     .sol-card-icon {
-      width: 44px; height: 44px;
+      width: 48px; height: 48px;
       border-radius: 50%;
       display: grid; place-items: center;
       flex-shrink: 0;
       color: #fff;
     }
-    .sol-card-icon svg { width: 20px; height: 20px; }
+    .sol-card-icon svg { width: 22px; height: 22px; }
     .sol-card-head h3 {
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 800;
-      margin: 0 0 3px;
+      margin: 0 0 6px;
       line-height: 1.2;
     }
     .sol-card-head p {
       margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.4;
+      font-size: 15.5px;
+      color: var(--ink-soft);
+      line-height: 1.45;
     }
     .sol-card--green .sol-card-icon { background: var(--green); }
     .sol-card--green .sol-card-head h3 { color: var(--green); }
-    .sol-card--green .sol-check { color: var(--green); }
     .sol-card--blue .sol-card-icon { background: var(--blue); }
     .sol-card--blue .sol-card-head h3 { color: var(--blue); }
-    .sol-card--blue .sol-check { color: var(--blue); }
     .sol-card--purple .sol-card-icon { background: var(--violet); }
     .sol-card--purple .sol-card-head h3 { color: var(--violet); }
-    .sol-card--purple .sol-check { color: var(--violet); }
 
     .sol-card-preview {
       background: var(--bg);
       border: 1px solid var(--line);
       border-radius: 12px;
       overflow: hidden;
-      margin-bottom: 12px;
       flex: 1;
-      min-height: 200px;
+      min-height: 220px;
       height: auto;
     }
     .sol-card-preview img {
       display: block;
       width: 100%;
       height: 100%;
-      min-height: 200px;
+      min-height: 220px;
       object-fit: cover;
       object-position: top center;
     }
     .sol-preview-learn {
       height: 100%;
-      min-height: 200px;
+      min-height: 220px;
       padding: 12px;
       background: #eef0f4;
       border: none;
@@ -696,7 +723,7 @@
     }
     .sol-card-preview.sol-preview-chat {
       height: 100%;
-      min-height: 200px;
+      min-height: 220px;
       padding: 12px;
       background: #faf9fc;
       border: 1px solid #ebe6f4;
@@ -802,31 +829,10 @@
       letter-spacing: 1px;
     }
 
-    .sol-card-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      flex-shrink: 0;
-    }
-    .sol-card-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      padding: 5px 0;
-      font-size: 13.5px;
-      color: var(--ink-soft);
-      line-height: 1.4;
-    }
-    .sol-check {
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
     .solution-benefits {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      margin-top: 14px;
+      margin-top: 16px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -837,14 +843,14 @@
     .sol-benefit {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 16px 18px;
+      gap: 14px;
+      padding: 18px 20px;
       text-align: left;
       border-right: 1px solid var(--line);
     }
     .sol-benefit:last-child { border-right: none; }
     .sol-ben-icon {
-      width: 40px; height: 40px;
+      width: 44px; height: 44px;
       border-radius: 50%;
       border: 2px solid var(--accent);
       color: var(--accent);
@@ -852,22 +858,15 @@
       flex-shrink: 0;
       background: transparent;
     }
-    .sol-ben-icon svg { width: 18px; height: 18px; stroke-width: 2.2; }
+    .sol-ben-icon svg { width: 20px; height: 20px; stroke-width: 2.2; }
     .sol-ben-text { min-width: 0; }
     .sol-ben-top {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--accent);
       line-height: 1.35;
       font-family: "Plus Jakarta Sans", sans-serif;
-    }
-    .sol-ben-sub {
-      display: block;
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.35;
     }
 
     /* ============ SECTION 4 — SHOWCASE ============ */
@@ -1174,11 +1173,26 @@
 
   <!-- SIDE RAIL -->
   <aside class="side-rail" aria-label="Điều hướng trang">
-    <button class="side-rail-item active" data-target="s-hero">Trang chủ</button>
-    <button class="side-rail-item" data-target="s-pain">Vấn đề</button>
-    <button class="side-rail-item" data-target="s-solution">Giải pháp</button>
-    <button class="side-rail-item" data-target="s-showcase">Demo</button>
-    <button class="side-rail-item" data-target="s-start">Bắt đầu</button>
+    <button class="side-rail-item active" type="button" data-target="s-hero" aria-label="01 · Trang đầu">
+      <span class="side-rail-label">01 · Trang đầu</span>
+      <span class="side-rail-bar" aria-hidden="true"></span>
+    </button>
+    <button class="side-rail-item" type="button" data-target="s-pain" aria-label="02 · Vấn đề">
+      <span class="side-rail-label">02 · Vấn đề</span>
+      <span class="side-rail-bar" aria-hidden="true"></span>
+    </button>
+    <button class="side-rail-item" type="button" data-target="s-solution" aria-label="03 · Giải pháp">
+      <span class="side-rail-label">03 · Giải pháp</span>
+      <span class="side-rail-bar" aria-hidden="true"></span>
+    </button>
+    <button class="side-rail-item" type="button" data-target="s-showcase" aria-label="04 · Demo">
+      <span class="side-rail-label">04 · Demo</span>
+      <span class="side-rail-bar" aria-hidden="true"></span>
+    </button>
+    <button class="side-rail-item" type="button" data-target="s-start" aria-label="05 · Bắt đầu">
+      <span class="side-rail-label">05 · Bắt đầu</span>
+      <span class="side-rail-bar" aria-hidden="true"></span>
+    </button>
   </aside>
 
   <main class="snap-root" id="snapRoot">
@@ -1242,7 +1256,7 @@
     <div class="solution-wrap">
 
       <header class="solution-head reveal">
-        <h2>Một nền tảng <span class="hl">duy nhất</span>, giải quyết <span class="hl">toàn bộ</span> bài toán quản lý lớp học</h2>
+        <h2>Một nền tảng <span class="hl">duy nhất</span>,<br />giải quyết <span class="hl">toàn bộ</span> việc quản lý lớp học</h2>
       </header>
 
       <div class="solution-grid reveal reveal-d1">
@@ -1253,19 +1267,12 @@
             </div>
             <div>
               <h3>Quản lý lớp học</h3>
-              <p>Tổ chức lớp học khoa học, tiết kiệm thời gian</p>
+              <p>Lịch học, điểm danh, học phí và thông tin học sinh</p>
             </div>
           </div>
           <div class="sol-card-preview">
             <img src="Solution_Calendar.png" alt="Lịch dạy và điểm danh — TuteClass" />
           </div>
-          <ul class="sol-card-list">
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Quản lý nhiều lớp và học sinh</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Lịch học trực quan, tránh xung đột</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Quản lý học phí, theo dõi thanh toán</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Nhắc lịch tự động</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Báo cáo thống kê chi tiết</li>
-          </ul>
         </article>
 
         <article class="sol-card sol-card--blue">
@@ -1275,7 +1282,7 @@
             </div>
             <div>
               <h3>Quản lý học tập</h3>
-              <p>Từ tài liệu, bài tập đến chấm điểm đều dễ dàng</p>
+              <p>Giao bài, chấm điểm và theo dõi tiến độ</p>
             </div>
           </div>
           <div class="sol-card-preview sol-preview-learn">
@@ -1311,13 +1318,6 @@
               </div>
             </div>
           </div>
-          <ul class="sol-card-list">
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Giao bài tập, bài kiểm tra linh hoạt</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Nộp bài online, chấm điểm và phản hồi</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Lưu trữ tài liệu tập trung, dễ tìm kiếm</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Theo dõi tiến độ và kết quả học tập</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Thảo luận, hỏi đáp ngay trên hệ thống</li>
-          </ul>
         </article>
 
         <article class="sol-card sol-card--purple">
@@ -1327,7 +1327,7 @@
             </div>
             <div>
               <h3>AI Teaching Assistant</h3>
-              <p>Trợ lý AI thông minh, hỗ trợ giáo viên mọi lúc mọi nơi</p>
+              <p>Trợ lý AI hỗ trợ giáo viên dạy học mọi lúc mọi nơi</p>
             </div>
           </div>
           <div class="sol-card-preview sol-preview-chat">
@@ -1355,13 +1355,6 @@
               </div>
             </div>
           </div>
-          <ul class="sol-card-list">
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Sinh bài tập, đề kiểm tra theo chủ đề</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Tóm tắt nội dung bài học</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Tạo nhận xét học sinh cá nhân hóa</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Truy vấn dữ liệu lớp bằng ngôn ngữ tự nhiên</li>
-            <li><svg class="sol-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4 10-10"/></svg>Đề xuất bài tập phù hợp với từng học sinh</li>
-          </ul>
         </article>
       </div>
 
@@ -1369,29 +1362,25 @@
         <div class="sol-benefit">
           <div class="sol-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
           <div class="sol-ben-text">
-            <span class="sol-ben-top">Tiết kiệm 70%</span>
-            <span class="sol-ben-sub">thời gian quản lý</span>
+            <span class="sol-ben-top">Tiết kiệm 70% thời gian</span>
           </div>
         </div>
         <div class="sol-benefit">
           <div class="sol-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
           <div class="sol-ben-text">
-            <span class="sol-ben-top">Giảm sai sót,</span>
-            <span class="sol-ben-sub">dữ liệu luôn chính xác</span>
+            <span class="sol-ben-top">Dữ liệu an toàn</span>
           </div>
         </div>
         <div class="sol-benefit">
           <div class="sol-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 18v-4M8 18V8M12 18v-2M16 18V4M20 18v-6"/><path d="M20 6l2-2"/></svg></div>
           <div class="sol-ben-text">
             <span class="sol-ben-top">Nâng cao hiệu quả</span>
-            <span class="sol-ben-sub">giảng dạy và học tập</span>
           </div>
         </div>
         <div class="sol-benefit">
           <div class="sol-ben-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <div class="sol-ben-text">
-            <span class="sol-ben-top">Giáo viên tập trung</span>
-            <span class="sol-ben-sub">vào chất lượng giảng dạy</span>
+            <span class="sol-ben-top">Gắn kết dễ dàng</span>
           </div>
         </div>
       </div>
