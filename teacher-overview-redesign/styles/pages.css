@@ -1,0 +1,8 @@
+@import "./components.css";
+@import "./calendar.css";
+@import "./modals.css";
+
+.note-tab.chung-tab::before { display: none; }
+.note-tab.chung-tab .cls { color: var(--accent); }
+.paper-amber { --note: #fbf0dd; }
+.paper-rose { --note: #fce4e8; }

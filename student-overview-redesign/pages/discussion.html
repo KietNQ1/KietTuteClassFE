@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuteClass · Student Discussion</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+  <main class="student-app">
+    <header class="topbar">
+      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <nav class="hnav">
+        <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
+        <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
+        <a data-page-link href="assignments.html"><span class="icon" data-icon="checklist"></span>Bài tập</a>
+        <a data-page-link href="resources.html"><span class="icon" data-icon="book"></span>Tài liệu</a>
+        <a data-page-link href="discussion.html"><span class="icon" data-icon="message"></span>Trao đổi</a>
+        <label class="search"><span class="icon" data-icon="search"></span><input placeholder="Tìm tin nhắn, tệp, thông báo..." /></label>
+      </nav>
+      <div class="top-actions"><button class="icon-btn" type="button"><span class="dot"></span><span class="icon" data-icon="bell"></span></button><button class="profile" type="button"><span class="avatar">MA</span><span class="profile-meta"><b>Minh Anh</b><small>Học sinh</small></span><span class="icon" data-icon="chev"></span></button></div>
+    </header>
+    <section class="main">
+      <div class="content">
+        <div class="class-row"><button class="title-switch" data-open-drawer type="button"><span>Lớp đang học</span><strong>Toán 9A</strong><span class="icon" data-icon="chev"></span></button><button class="primary-action" type="button"><span class="icon" data-icon="message"></span>Tin mới</button></div>
+        <div class="page-head"><div><div class="breadcrumb">Trang học sinh / <b>Toán 9A</b></div><h1>Trao đổi lớp</h1><div class="sub">Trao đổi cùng cả lớp hoặc nhắn riêng với giáo viên.</div></div></div>
+        <section class="grid with-sidebar">
+          <article class="panel">
+            <header class="panel-head"><div class="panel-title"><span class="panel-icon b-green"><span class="icon" data-icon="message"></span></span><h3>Trao đổi</h3></div><span class="more">Note lớp</span></header>
+            <div class="seg"><button class="active">Note lớp</button><button>Note giáo viên</button></div>
+            <div class="chat-feed">
+              <article class="message teacher"><div class="message-avatar">CL</div><div><div class="message-meta"><strong>Cô Lan</strong><span>08:05</span></div><p>Các em xem trước lý thuyết trong SGK trang 45-47 và làm bài tập 1, 2 trước khi học nhé.</p></div></article>
+              <article class="message"><div class="message-avatar">LT</div><div><div class="message-meta"><strong>Lớp trưởng</strong><span>08:07</span></div><p>Lớp trưởng xin nhắc các bạn nộp bài tập đúng hạn nhé.</p></div></article>
+              <article class="message"><div class="message-avatar">MA</div><div><div class="message-meta"><strong>Minh Anh</strong><span>09:12</span></div><p>Cô ơi, bài 2 ý b em chưa hiểu cách xác định a, b, c ạ.</p></div></article>
+              <article class="message teacher"><div class="message-avatar">CL</div><div><div class="message-meta"><strong>Cô Lan</strong><span>09:18</span></div><p>Minh Anh xem ví dụ 2 trong trang 46 nhé. Chiều nay lên lớp cô sẽ hướng dẫn kỹ hơn.</p></div></article>
+            </div>
+            <div class="chat-input"><input placeholder="Nhập tin nhắn..." /><button type="button"><span class="icon" data-icon="paperclip"></span></button><button type="button"><span class="icon" data-icon="send"></span></button></div>
+          </article>
+          <aside class="side-stack">
+            <article class="note-card note-green"><h3>Ghim thông báo</h3><ul><li>Nộp bài tập trước 21:00 thứ Sáu.</li><li>Kiểm tra 15 phút vào đầu mỗi buổi học.</li><li>Thắc mắc sẽ được giải đáp trong giờ học hoặc tại đây.</li></ul></article>
+            <article class="note-card note-purple"><h3>Tệp đã chia sẻ</h3><div class="shared-files"><article class="shared-file"><span class="file-badge file-pdf"><span class="icon" data-icon="file"></span></span><div><strong>Bài giảng phương trình bậc hai.pdf</strong><span>Cô Lan · 03/05</span></div><span class="icon" data-icon="link"></span></article><article class="shared-file"><span class="file-badge file-doc"><span class="icon" data-icon="file"></span></span><div><strong>Bài tập luyện tập.docx</strong><span>Cô Lan · 01/05</span></div><span class="icon" data-icon="link"></span></article></div></article>
+          </aside>
+        </section>
+      </div>
+    </section>
+    <div class="dock-wrap"><svg class="dock-bg" viewBox="0 0 524 56"><path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" /></svg></div>
+    <nav class="dock"><a data-page-link href="overview.html" title="Tổng quan"><span><span class="icon" data-icon="layout"></span></span></a><a data-page-link href="schedule.html" title="Lịch học"><span><span class="icon" data-icon="calendar"></span></span></a><a data-page-link href="assignments.html" title="Bài tập"><span><span class="icon" data-icon="file"></span></span></a><a data-page-link href="resources.html" title="Tài liệu"><span><span class="icon" data-icon="book"></span></span></a><a data-page-link href="discussion.html" title="Trao đổi"><span><span class="icon" data-icon="message"></span></span></a><a href="overview.html#ai" title="Trợ lý AI"><span><span class="icon" data-icon="sparkles"></span></span></a></nav>
+    <div class="drawer-overlay" data-drawer-overlay></div><aside class="class-drawer" data-class-drawer><div class="drawer-head"><h3>Lớp của tôi</h3><button class="drawer-close" data-close-drawer type="button"><span class="icon" data-icon="close"></span></button></div><div class="class-notes"><button class="note-tab paper-yellow active" type="button"><strong>Toán 9A</strong><span>Cô Lan</span><small>Đang theo học</small></button><button class="note-tab add" data-modal-target="join-class" type="button">+ Thêm lớp</button></div></aside>
+    <div class="modal-backdrop" data-modal="join-class" role="presentation"><section aria-label="Tham gia lớp học" aria-modal="true" class="student-modal join-modal" role="dialog"><button aria-label="Đóng popup tham gia lớp học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button><header class="modal-header"><span class="modal-icon b-green"><span class="icon" data-icon="plus"></span></span><div><h2>Tham gia lớp học</h2><p>Nhập mã lớp hoặc link mời do giáo viên cung cấp để thêm lớp vào sổ học tập.</p></div></header><div class="join-grid"><label><span>Mã lớp</span><input placeholder="Ví dụ: MATH9A" /></label><label><span>Link mời</span><input placeholder="https://tuteclass.vn/join/..." /></label></div><div class="modal-actions"><button data-close-modal type="button">Hủy</button><button class="primary" type="button">Tham gia lớp</button></div></section></div>
+  </main>
+  <script src="../scripts/icons.js"></script><script src="../scripts/app.js"></script>
+</body>
+</html>

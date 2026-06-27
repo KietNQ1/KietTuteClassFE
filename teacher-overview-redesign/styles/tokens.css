@@ -1,0 +1,41 @@
+/* Design tokens */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+      --bg: rgb(254, 251, 246);
+      --surface: #ffffff;
+      --ink: #1d2330;
+      --ink-soft: #59616f;
+      --muted: #8b93a3;
+      --line: #e8ecf2;
+      --sidebar: #ffffff;
+
+      --accent: #2f8f6b;
+      --accent-soft: #e6f4ee;
+
+      --green: #2f9e6f;   --green-bg: #e7f6ee;
+      --amber: #d98a2b;   --amber-bg: #fbf0dd;
+      --rose: #d65d72;    --rose-bg: #fce4e8;
+      --blue: #3b7bd4;    --blue-bg: #e6eefb;
+      --violet: #7d5fd1;  --violet-bg: #efe9fb;
+
+      --r-lg: 20px;
+      --r-md: 16px;
+      --r-sm: 12px;
+      --shadow: 0 10px 30px -18px rgba(29, 35, 48, 0.22);
+      --shadow-sm: 0 4px 14px -10px rgba(29, 35, 48, 0.25);
+    }
+
+* { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      background: #dfe6ef;
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+    }
+
+h1, h2, h3, h4 { font-family: "Plus Jakarta Sans", sans-serif; margin: 0; }

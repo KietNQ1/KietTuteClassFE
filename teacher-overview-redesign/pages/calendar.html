@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuteClass · Lịch dạy</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+<div class="teacher-app">
+    <header class="topbar">
+      <a href="overview.html" class="brand">
+        <img src="../../TuteLogo.png" alt="TuteClass" class="brand-logo" />
+      </a>
+
+      <nav class="hnav">
+        <a href="overview.html" class="hic" data-page-link title="Trang chủ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          <span>Trang chủ</span>
+        </a>
+        <a href="calendar.html" class="hic" data-page-link title="Lịch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span>Lịch</span>
+        </a>
+        <a href="#" class="hic" data-page-link title="Học viên">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Học viên</span>
+        </a>
+        <a href="#" class="hic" data-page-link title="Bài tập">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          <span>Bài tập</span>
+        </a>
+        <a href="#" class="hic" data-page-link title="Báo cáo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
+          <span>Báo cáo</span>
+        </a>
+        <div class="search">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="s-input" type="text" placeholder="Tìm kiếm lớp, học sinh, bài tập..." />
+        </div>
+      </nav>
+
+      <div class="top-actions">
+        <button class="icon-btn" title="Thông báo">
+          <span class="badge">3</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </button>
+        <button class="profile" title="Tài khoản">
+          <div class="avatar">NL</div>
+          <div class="meta">
+            <b>Cô Nguyễn Lan</b>
+            <small>Giáo viên</small>
+          </div>
+          <span class="prof-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="cal-layout">
+        <section class="cal-main">
+          <header class="page-head">
+            <div>
+              <button class="title-switch" type="button" data-open-drawer title="Chọn lớp xem lịch">
+                <h1>Lịch dạy <b id="currentClass">Chung</b></h1>
+                <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+              </button>
+              <p class="sub">Quản lý lịch dạy và các buổi học của bạn</p>
+            </div>
+          </header>
+
+          <div class="cal-toolbar">
+            <div class="cal-toolbar-left">
+              <div class="view-toggle">
+                <button class="view-btn active" type="button" id="btnViewWeek" data-view="week">Tuần</button>
+                <button class="view-btn" type="button" id="btnViewMonth" data-view="month">Tháng</button>
+              </div>
+              <button class="tb-btn" type="button" id="btnToday">Hôm nay</button>
+            </div>
+            <div class="cal-toolbar-center">
+              <button class="tb-btn tb-btn-icon" type="button" id="btnWeekPrev" aria-label="Trước">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <span class="cal-nav-range" id="calDateRange">22/06 - 28/06/2026</span>
+              <button class="tb-btn tb-btn-icon" type="button" id="btnWeekNext" aria-label="Sau">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div class="cal-toolbar-right">
+              <button class="btn-primary" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                Tạo lịch học
+              </button>
+              <button class="tb-btn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                Cài đặt lịch
+              </button>
+            </div>
+          </div>
+
+          <div class="cal-shell">
+            <div class="cal-scroll cal-view-panel" id="calWeekPanel">
+              <div class="cal-grid" id="calGrid"></div>
+            </div>
+            <div class="cal-scroll cal-month-scroll cal-view-panel" id="calMonthPanel" hidden>
+              <div class="month-cal-panel">
+                <div class="mini-grid" id="mainMonthGrid"></div>
+              </div>
+            </div>
+            <div class="cal-legend" id="calLegend">
+              <span><i style="background:var(--green)"></i> Toán 9A</span>
+              <span><i style="background:var(--violet)"></i> Toán 10A</span>
+              <span><i style="background:var(--blue)"></i> Toán 10B</span>
+              <span><i style="background:var(--amber)"></i> Toán 11A</span>
+              <span><i style="background:var(--rose)"></i> Toán 12</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="cal-sidebar">
+          <div class="side-card week-stats-card">
+            <div class="week-stats-head">
+              <h4>Tuần này</h4>
+              <span class="week-stats-chart-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-8M22 20V8"/></svg>
+              </span>
+            </div>
+            <div class="week-stats-grid">
+              <div class="week-stat-tile">
+                <div class="wst-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
+                <div class="wst-body"><b id="wsSessions">12</b><small>Buổi học</small></div>
+              </div>
+              <div class="week-stat-tile">
+                <div class="wst-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="wst-body"><b id="wsClasses">5</b><small>Lớp học</small></div>
+              </div>
+              <div class="week-stat-tile">
+                <div class="wst-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg></div>
+                <div class="wst-body"><b id="wsStudents">137</b><small>Học sinh</small></div>
+              </div>
+              <div class="week-stat-tile">
+                <div class="wst-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg></div>
+                <div class="wst-body"><b id="wsAttend">93%</b><small>Chuyên cần</small></div>
+              </div>
+            </div>
+            <div class="week-progress-block">
+              <div class="week-progress-head">
+                <span>Tiến độ dạy tuần này</span>
+                <div class="week-progress-count"><b id="wsTaught">8</b> / <span id="wsTotal">12</span> buổi</div>
+              </div>
+              <div class="week-progress-bar">
+                <div class="week-progress-fill" id="wsProgressFill" style="width:67%"></div>
+              </div>
+              <div class="week-progress-foot">
+                <span class="done" id="wsTaughtLabel">8 buổi đã dạy</span>
+                <span class="left" id="wsRemaining">Còn 4 buổi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-card side-card--upcoming">
+            <div class="side-card-head">
+              <h3>Sắp tới</h3>
+            </div>
+            <div class="up-list">
+              <div class="up-item">
+                <span class="up-bar" style="background:var(--green)"></span>
+                <div class="up-body">
+                  <b>Toán 9A</b>
+                  <small>08:00 – 10:00 · Phòng 201</small>
+                </div>
+                <div class="up-when"><b>Hôm nay</b>Thứ 4</div>
+              </div>
+              <div class="up-item">
+                <span class="up-bar" style="background:var(--violet)"></span>
+                <div class="up-body">
+                  <b>Toán 10A</b>
+                  <small>14:00 – 16:00 · meet.google.com/abc-defg-hij</small>
+                </div>
+                <div class="up-when"><b>Hôm nay</b>Thứ 4</div>
+              </div>
+              <div class="up-item">
+                <span class="up-bar" style="background:var(--blue)"></span>
+                <div class="up-body">
+                  <b>Toán 10B</b>
+                  <small>19:00 – 21:00 · Phòng 101</small>
+                </div>
+                <div class="up-when"><b>Hôm nay</b>Thứ 4</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="dock-wrap">
+      <svg class="dock-bg" viewBox="0 0 524 56" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" />
+      </svg>
+      <nav class="dock">
+        <button class="dock-btn" type="button" title="Tổng quan" onclick="window.location.href='overview.html'">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>
+          <span>Tổng quan</span>
+        </button>
+        <button class="dock-btn active" type="button" title="Lịch dạy">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span>Lịch dạy</span>
+        </button>
+        <button class="dock-btn" type="button" title="Học viên">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span>Học viên</span>
+        </button>
+        <button class="dock-btn" type="button" title="Học phí">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span>
+          <span>Học phí</span>
+        </button>
+        <button class="dock-btn" type="button" title="Bài tập">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+          <span>Bài tập</span>
+        </button>
+        <button class="dock-btn" type="button" title="Tài liệu">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span>Tài liệu</span>
+        </button>
+        <button class="dock-btn" type="button" title="Trao đổi">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <span>Trao đổi</span>
+        </button>
+        <button class="dock-btn" type="button" title="Trợ lý AI">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></span>
+          <span>Trợ lý AI</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="drawer-overlay" data-drawer-overlay></div>
+    <aside class="drawer" data-class-drawer>
+      <div class="drawer-head">
+        <h3>Chọn lớp</h3>
+        <button class="drawer-close" type="button" data-close-drawer>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="notes">
+        <div class="note-tab paper-green chung-tab active" data-class="" onclick="selectClass(this)">
+          <div class="cls">Chung</div>
+          <div class="tea">Tất cả lớp</div>
+          <div class="meta">📅 Xem toàn bộ lịch dạy</div>
+        </div>
+        <div class="note-tab paper-yellow" data-class="Toán 9A" onclick="selectClass(this)">
+          <div class="cls">Toán 9A</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 30 học sinh</div>
+        </div>
+        <div class="note-tab paper-violet" data-class="Toán 10A" onclick="selectClass(this)">
+          <div class="cls">Toán 10A</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 28 học sinh</div>
+        </div>
+        <div class="note-tab paper-blue" data-class="Toán 10B" onclick="selectClass(this)">
+          <div class="cls">Toán 10B</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 26 học sinh</div>
+        </div>
+        <div class="note-tab paper-amber" data-class="Toán 11A" onclick="selectClass(this)">
+          <div class="cls">Toán 11A</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 24 học sinh</div>
+        </div>
+        <div class="note-tab paper-rose" data-class="Toán 12" onclick="selectClass(this)">
+          <div class="cls">Toán 12</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 22 học sinh</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- DAY SESSIONS POPUP (month view) -->
+  <div class="day-sess-overlay" id="daySessionsModal" aria-hidden="true">
+    <div class="day-sess-modal" role="dialog" aria-labelledby="daySessTitle">
+      <div class="day-sess-head">
+        <h2 id="daySessTitle">Thứ 4, 28/06/2026</h2>
+        <button class="day-sess-close" type="button" id="daySessClose" title="Đóng">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="day-sess-list" id="daySessList"></div>
+    </div>
+  </div>
+
+  <!-- LESSON DETAIL MODAL -->
+  <div class="modal-overlay" id="lessonModal" aria-hidden="true">
+    <div class="lesson-modal" role="dialog" aria-labelledby="lmTitle">
+      <div class="lm-topbar">
+        <div class="lm-crumb">
+          <span class="lm-key" id="lmCrumbClass">Toán 9A</span>
+          <span>/</span>
+          <b id="lmCrumbId">Buổi 12</b>
+        </div>
+        <div class="lm-top-actions">
+          <button class="lm-icon-btn" type="button" title="Theo dõi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          <button class="lm-icon-btn" type="button" title="Chia sẻ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></button>
+          <button class="lm-icon-btn" type="button" title="Thêm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button>
+          <button class="lm-icon-btn" type="button" id="lmClose" title="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+      </div>
+      <div class="lm-header">
+        <h1 id="lmTitle">Chi tiết buổi học – Đạo hàm và ứng dụng</h1>
+        <div class="lm-meta-row">
+          <div class="lm-meta-chip">
+            <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+            <span id="lmMetaSubject">Môn học: Toán</span>
+          </div>
+          <div class="lm-meta-chip lm-meta-chip--attend">
+            <div class="ic ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+            <span id="lmMetaAttend">Điểm danh: 28/30 học sinh</span>
+            <button class="lm-attend-icon-btn" type="button" id="lmAttendOpen" title="Điểm danh">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+            </button>
+          </div>
+          <div class="lm-meta-chip lm-meta-chip--time">
+            <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div class="lm-meta-text">
+              <span id="lmMetaScheduleDate">Thứ 4, 28/06/2026</span>
+              <small class="lm-meta-sub" id="lmMetaScheduleTime">08:00 – 10:00</small>
+            </div>
+            <button class="lm-edit-meta-btn" type="button" id="lmEditSchedule" title="Chỉnh sửa lịch học">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+          </div>
+          <div class="lm-meta-chip lm-meta-chip--format" id="lmFormatChip">
+            <div class="ic ic-amber" id="lmMetaFormatIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="lm-meta-text">
+              <span id="lmMetaFormat">Hình thức: Offline</span>
+              <small class="lm-meta-sub" id="lmMetaFormatDetail">Phòng 201</small>
+            </div>
+            <button class="lm-edit-meta-btn" type="button" id="lmEditFormat" title="Chỉnh sửa hình thức">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <div class="lm-format-popover" id="lmFormatPopover">
+              <div class="lm-format-popover-head">Chỉnh sửa hình thức</div>
+              <div class="lm-format-field">
+                <label for="lmFormatTypeSelect">Hình thức</label>
+                <select id="lmFormatTypeSelect">
+                  <option value="offline">Offline</option>
+                  <option value="online">Online</option>
+                </select>
+              </div>
+              <div class="lm-format-field">
+                <label for="lmFormatDetailInput" id="lmFormatDetailLabel">Nơi học</label>
+                <input type="text" id="lmFormatDetailInput" placeholder="VD: Phòng 201" />
+              </div>
+              <div class="lm-format-popover-actions">
+                <button type="button" class="lm-format-cancel" id="lmFormatCancel">Huỷ</button>
+                <button type="button" class="lm-format-save" id="lmFormatSave">Lưu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lm-body">
+        <div class="lm-main">
+
+          <div class="lm-section">
+            <div class="lm-section-head">
+              <h3><span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> Mô tả buổi học</h3>
+              <button class="lm-edit-desc-btn" type="button" id="lmEditDesc" title="Chỉnh sửa mô tả">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+            </div>
+            <div class="lm-desc-box" id="lmDesc"></div>
+          </div>
+
+          <div class="lm-section">
+            <div class="lm-section-head">
+              <h3><span class="ic ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Trao đổi</h3>
+            </div>
+            <div class="lm-comments" id="lmComments"></div>
+          </div>
+        </div>
+
+        <aside class="lm-sidebar">
+          <div class="lm-sidebar-tabs" role="tablist">
+            <button class="lm-tab active" type="button" role="tab" aria-selected="true" data-tab="homework">Bài tập</button>
+            <button class="lm-tab" type="button" role="tab" aria-selected="false" data-tab="tests">Kiểm tra</button>
+            <button class="lm-tab" type="button" role="tab" aria-selected="false" data-tab="materials">Tài liệu</button>
+          </div>
+          <div class="lm-sidebar-panels">
+            <div class="lm-tab-panel active" id="lmPanelHomework" role="tabpanel">
+              <div class="lm-list-wrap">
+                <button class="lm-list-add" type="button" id="lmAddHomework" title="Thêm bài tập">
+                  <span class="lm-list-add-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                    Thêm bài tập
+                  </span>
+                </button>
+                <div class="lm-list" id="lmHomework"></div>
+              </div>
+            </div>
+            <div class="lm-tab-panel" id="lmPanelTests" role="tabpanel">
+              <div class="lm-list-wrap">
+                <button class="lm-list-add" type="button" id="lmAddTest" title="Thêm kiểm tra">
+                  <span class="lm-list-add-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                    Thêm kiểm tra
+                  </span>
+                </button>
+                <div class="lm-list" id="lmTests"></div>
+              </div>
+            </div>
+            <div class="lm-tab-panel" id="lmPanelMaterials" role="tabpanel">
+              <div class="lm-mat-filters" role="tablist">
+                <button class="lm-mat-btn active" type="button" role="tab" aria-selected="true" data-mat="media" title="Ảnh &amp; video">
+                  <span class="lm-mat-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
+                  <span>Ảnh &amp; video</span>
+                </button>
+                <button class="lm-mat-btn" type="button" role="tab" aria-selected="false" data-mat="docs" title="Tài liệu">
+                  <span class="lm-mat-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+                  <span>Tài liệu</span>
+                </button>
+                <button class="lm-mat-btn" type="button" role="tab" aria-selected="false" data-mat="links" title="Link">
+                  <span class="lm-mat-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                  <span>Link</span>
+                </button>
+              </div>
+              <div class="lm-mat-views">
+                <div class="lm-mat-view active" id="lmMatMedia" role="tabpanel">
+                  <div class="lm-media-grid" id="lmMedia"></div>
+                </div>
+                <div class="lm-mat-view" id="lmMatDocs" role="tabpanel">
+                  <div class="lm-doc-list" id="lmDocs"></div>
+                </div>
+                <div class="lm-mat-view" id="lmMatLinks" role="tabpanel">
+                  <div class="lm-link-list" id="lmLinks"></div>
+                </div>
+              </div>
+              <div class="lm-upload-zone" id="lmUploadZone" role="button" tabindex="0" title="Upload tài liệu">
+                <button class="lm-upload-btn" type="button" id="lmUploadBtn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Tải lên tài liệu
+                </button>
+                <small>Ảnh, video, PDF, Word, Excel, PowerPoint...</small>
+                <input type="file" id="lmMatUpload" hidden multiple accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt" />
+              </div>
+              <div class="lm-link-add" id="lmLinkAdd" hidden>
+                <input type="url" class="lm-link-input" id="lmLinkInput" placeholder="Nhập link tham khảo..." />
+                <button type="button" class="lm-link-submit" id="lmLinkAddBtn">Thêm</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATTENDANCE MODAL -->
+  <div class="att-modal-overlay" id="attendanceModal" aria-hidden="true">
+    <div class="att-modal" role="dialog" aria-labelledby="attTitle">
+      <div class="att-head">
+        <h2 id="attTitle">Điểm danh – <span id="attClassName">Toán 9A</span></h2>
+        <button class="att-close" type="button" id="attClose" title="Đóng">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="att-summary">
+        Buổi học thứ <b id="attSessionNum">12</b> ·
+        Có mặt: <b id="attPresentCount">28</b>/<b id="attTotalCount">30</b> học sinh
+      </div>
+      <div class="att-table-wrap">
+        <table class="att-table">
+          <thead>
+            <tr>
+              <th class="col-stt">STT</th>
+              <th class="col-name">Học sinh</th>
+              <th class="col-attend">Điểm danh</th>
+              <th class="col-rate">Chuyên cần</th>
+              <th class="col-time">Thời gian điểm danh</th>
+            </tr>
+          </thead>
+          <tbody id="attList"></tbody>
+        </table>
+      </div>
+      <div class="att-foot">
+        <button class="att-save-btn" type="button" id="attSaveBtn">Lưu điểm danh</button>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/calendar.js"></script>
+</body>
+</html>

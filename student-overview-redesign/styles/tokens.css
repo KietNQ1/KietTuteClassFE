@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg: rgb(254, 251, 246);
+  --surface: #ffffff;
+  --ink: #1d2330;
+  --ink-soft: #59616f;
+  --muted: #8b93a3;
+  --line: #e8ecf2;
+  --accent: #2f8f6b;
+  --accent-soft: #e6f4ee;
+  --green: #2f9e6f;
+  --green-bg: #e7f6ee;
+  --amber: #d98a2b;
+  --amber-bg: #fbf0dd;
+  --rose: #d65d72;
+  --rose-bg: #fce4e8;
+  --blue: #3b7bd4;
+  --blue-bg: #e6eefb;
+  --violet: #7d5fd1;
+  --violet-bg: #efe9fb;
+  --r-lg: 20px;
+  --r-md: 16px;
+  --r-sm: 12px;
+  --shadow: 0 10px 30px -18px rgba(29, 35, 48, 0.22);
+  --shadow-sm: 0 4px 14px -10px rgba(29, 35, 48, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: #dfe6ef;
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.b-green {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.b-amber {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.b-rose {
+  background: var(--rose-bg);
+  color: var(--rose);
+}
+
+.b-blue {
+  background: var(--blue-bg);
+  color: var(--blue);
+}
+
+.b-violet {
+  background: var(--violet-bg);
+  color: var(--violet);
+}
