@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuteClass · Student Assignments</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+  <main class="student-app">
+    <header class="topbar">
+      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <nav class="hnav">
+        <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
+        <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
+        <a data-page-link href="assignments.html"><span class="icon" data-icon="checklist"></span>Bài tập</a>
+        <a data-page-link href="resources.html"><span class="icon" data-icon="book"></span>Tài liệu</a>
+        <a data-page-link href="discussion.html"><span class="icon" data-icon="message"></span>Trao đổi</a>
+        <label class="search"><span class="icon" data-icon="search"></span><input placeholder="Tìm bài tập, điểm, nhận xét..." /></label>
+      </nav>
+      <div class="top-actions"><button class="icon-btn" type="button"><span class="dot"></span><span class="icon" data-icon="bell"></span></button><button class="profile" type="button"><span class="avatar">MA</span><span class="profile-meta"><b>Minh Anh</b><small>Học sinh</small></span><span class="icon" data-icon="chev"></span></button></div>
+    </header>
+
+    <section class="main">
+      <div class="content assignment-content">
+        <div class="class-row">
+          <button class="title-switch" data-open-drawer type="button"><span>Lớp đang học</span><strong>Toán 9A</strong><span class="icon" data-icon="chev"></span></button>
+        </div>
+
+        <div class="page-head assignment-page-head">
+          <div>
+            <div class="breadcrumb">Trang học sinh / <b>Toán 9A</b></div>
+            <h1>Bài tập lớp</h1>
+            <div class="sub">Theo dõi bài tập được giao, làm bài, nộp file và xem kết quả giáo viên chấm.</div>
+          </div>
+        </div>
+
+        <section class="assignment-workspace">
+          <div class="assignment-view active" data-assignment-view="list">
+            <article class="panel assignment-main-panel">
+              <div class="assignment-panel-tabs assignment-view-tabs" aria-label="Assignment views">
+                <button class="active" data-assignment-view-target="list" type="button">Danh sách</button>
+                <button data-assignment-view-target="scores" type="button">Xem điểm</button>
+              </div>
+              <header class="panel-head"><div class="panel-title"><span class="panel-icon b-violet"><span class="icon" data-icon="checklist"></span></span><h3>Bài tập được giao</h3></div><span class="more">5 bài</span></header>
+              <div class="filters compact-filters"><button class="active">Theo buổi</button><button>Trắc nghiệm</button><button>Tự luận</button><button>Đã nộp</button><button>Tất cả</button></div>
+              <div class="table assignment-table assignment-table-full">
+                <div class="table-head"><span>Bài tập</span><span>Buổi/Chủ đề</span><span>Hạn nộp</span><span>Thời lượng</span><span>Câu</span><span>Trạng thái</span><span></span></div>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-pending">π</span><strong>Bài tập chương 2: Hàm số bậc nhất</strong></div><div><strong>Buổi 15</strong><span>Hàm số bậc nhất</span></div><span class="danger-text">25/05 21:00</span><span>45 phút</span><strong>20</strong><span class="status status-pending">Chưa làm</span><button data-assignment-view-target="work">Làm</button></article>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-progress">√x</span><strong>Trắc nghiệm chương 3</strong></div><div><strong>Buổi 16</strong><span>Hàm số bậc hai</span></div><span class="danger-text">28/05 21:00</span><span>30 phút</span><strong>20</strong><span class="status status-progress">Đang làm</span><button data-assignment-view-target="work">Tiếp</button></article>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-done">Σ</span><strong>Ôn tập giữa kỳ</strong></div><div><strong>Buổi 18</strong><span>Ôn tập</span></div><span>05/06 21:00</span><span>45 phút</span><strong>30</strong><span class="status status-done">Đã nộp</span><button data-assignment-view-target="result">KQ</button></article>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-done">%</span><strong>Kiểm tra 15 phút - Hàm số bậc nhất</strong></div><div><strong>Buổi 17</strong><span>Ôn nhanh</span></div><span>01/06 08:00</span><span>15 phút</span><strong>10</strong><span class="status status-done">Đã chấm</span><button data-assignment-view-target="result">Xem</button></article>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-pending">△</span><strong>Bài trắc nghiệm hình học</strong></div><div><strong>Buổi 19</strong><span>Hình học</span></div><span class="danger-text">08/06 21:00</span><span>40 phút</span><strong>25</strong><span class="status status-pending">Chưa làm</span><button data-assignment-view-target="work">Làm</button></article>
+              </div>
+            </article>
+            <aside class="side-stack assignment-side">
+              <div class="assignment-side-stats">
+                <article class="assignment-stat-card"><span class="badge b-violet"><span class="icon" data-icon="checklist"></span></span><div><small>Tổng bài</small><strong>5</strong></div><b class="b-violet">Bài tập</b></article>
+                <article class="assignment-stat-card"><span class="badge b-green"><span class="icon" data-icon="checklist"></span></span><div><small>Đã nộp</small><strong>2</strong></div><b class="b-green">Tiến độ</b></article>
+                <article class="assignment-stat-card"><span class="badge b-rose"><span class="icon" data-icon="clock"></span></span><div><small>Cần làm</small><strong>3</strong></div><b class="b-rose">Ưu tiên</b></article>
+              </div>
+              <article class="note-card note-purple"><h3>Hạn nộp sắp tới</h3><ul><li>25/05 - Bài tập chương 2</li><li>28/05 - Trắc nghiệm chương 3</li><li>01/06 - Bài hình học</li></ul></article>
+              <article class="note-card note-yellow"><h3>Nhận xét giáo viên</h3><p>Bạn cần chú ý trình bày bài rõ ràng hơn và kiểm tra lại các bước tính toán.</p></article>
+              <article class="note-card note-green"><h3>Tỷ lệ hoàn thành</h3><div class="assignment-donut"><span>68%</span></div><ul><li>Đã nộp: 10</li><li>Đã chấm: 4</li><li>Chưa nộp: 5</li></ul></article>
+            </aside>
+          </div>
+
+          <div class="assignment-view" data-assignment-view="scores">
+            <article class="panel assignment-main-panel">
+              <div class="assignment-panel-tabs assignment-view-tabs" aria-label="Assignment views">
+                <button data-assignment-view-target="list" type="button">Danh sách</button>
+                <button class="active" data-assignment-view-target="scores" type="button">Xem điểm</button>
+              </div>
+              <header class="panel-head"><div class="panel-title"><span class="panel-icon b-green"><span class="icon" data-icon="chart"></span></span><h3>Bảng điểm bài tập</h3></div><span class="more">Bài đã nộp</span></header>
+              <div class="assignment-score-summary"><div><span>Bài đã nộp</span><strong>2</strong></div><div><span>Điểm trung bình</span><strong>8.7</strong></div><div><span>Nhận xét mới</span><strong>2</strong></div></div>
+              <div class="table assignment-score-table">
+                <div class="table-head"><span>Bài tập</span><span>Ngày nộp</span><span>Trạng thái</span><span>Điểm</span><span>Nhận xét</span><span></span></div>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-done">Σ</span><strong>Ôn tập giữa kỳ</strong></div><span>22/05 19:45</span><span class="status status-done">Đã nộp</span><strong class="score-text">8.5</strong><span>Đang chờ chấm tự luận.</span><button data-assignment-view-target="result">Chi tiết</button></article>
+                <article class="table-row"><div class="title-cell"><span class="symbol status-done">%</span><strong>Kiểm tra 15 phút</strong></div><span>30/05 20:10</span><span class="status status-done">Đã chấm</span><strong class="score-text">9.0</strong><span>Lời giải rõ, trình bày tốt.</span><button data-assignment-view-target="result">Chi tiết</button></article>
+              </div>
+              <p class="assignment-helper">Xem lại điểm, trạng thái chấm bài và nhận xét của giáo viên cho các bài đã nộp.</p>
+            </article>
+            <aside class="side-stack assignment-side">
+              <div class="assignment-side-stats">
+                <article class="assignment-stat-card"><span class="badge b-violet"><span class="icon" data-icon="checklist"></span></span><div><small>Tổng bài</small><strong>5</strong></div><b class="b-violet">Bài tập</b></article>
+                <article class="assignment-stat-card"><span class="badge b-green"><span class="icon" data-icon="checklist"></span></span><div><small>Đã nộp</small><strong>2</strong></div><b class="b-green">Tiến độ</b></article>
+                <article class="assignment-stat-card"><span class="badge b-rose"><span class="icon" data-icon="clock"></span></span><div><small>Cần làm</small><strong>3</strong></div><b class="b-rose">Ưu tiên</b></article>
+              </div>
+              <article class="note-card note-yellow"><h3>Tóm tắt kết quả</h3><strong class="assignment-side-score">8.5 / 10</strong><p>Bài tập đã hoàn thành và được lưu trong sổ để xem lại.</p></article>
+              <article class="note-card note-green"><h3>Nhận xét giáo viên</h3><ul><li>Bài làm rõ ràng.</li><li>Lời giải đủ 2 phần.</li><li>Cần chú ý dấu ở bước cuối.</li></ul></article>
+            </aside>
+          </div>
+
+          <div class="assignment-view" data-assignment-view="work">
+            <article class="panel assignment-main-panel assignment-work-panel">
+              <header class="assignment-work-hero">
+                <span class="symbol status-progress">√x</span>
+                <div>
+                  <h3>Trắc nghiệm chương 3</h3>
+                  <div class="assignment-work-meta"><span>Môn: Toán 9A</span><span>Hạn nộp: 28/05 21:00</span><span>Thời gian: 30 phút</span><strong>Đang làm</strong></div>
+                </div>
+              </header>
+              <div class="assignment-work-scroll">
+                <section class="assignment-question-list">
+                  <article class="assignment-question"><h3>Câu 1. <span>Hàm số bậc nhất có dạng tổng quát là:</span></h3><div class="assignment-options"><label class="assignment-option is-selected"><input checked name="q1" type="radio" /><strong>A.</strong><span>y = ax + b (a ≠ 0)</span></label><label class="assignment-option"><input name="q1" type="radio" /><strong>B.</strong><span>y = ax² + bx + c</span></label><label class="assignment-option"><input name="q1" type="radio" /><strong>C.</strong><span>y = a/x + b</span></label><label class="assignment-option"><input name="q1" type="radio" /><strong>D.</strong><span>y = a(x + b)</span></label></div></article>
+                  <article class="assignment-question"><h3>Câu 2. <span>Đồ thị của hàm số y = 2x - 3 là:</span></h3><div class="assignment-options"><label class="assignment-option"><input name="q2" type="radio" /><strong>A.</strong><span>Đường thẳng qua gốc tọa độ.</span></label><label class="assignment-option"><input name="q2" type="radio" /><strong>B.</strong><span>Đường thẳng song song trục hoành.</span></label><label class="assignment-option is-selected"><input checked name="q2" type="radio" /><strong>C.</strong><span>Cắt trục tung tại (0; -3).</span></label><label class="assignment-option"><input name="q2" type="radio" /><strong>D.</strong><span>Vuông góc với trục tung.</span></label></div></article>
+                  <article class="assignment-question"><h3>Câu 3. <span>Mô hình tiền mua bút khi từ chiếc thứ 11 được giảm 500đ là:</span></h3><div class="assignment-options"><label class="assignment-option"><input name="q3" type="radio" /><strong>A.</strong><span>y = 10.000x</span></label><label class="assignment-option"><input name="q3" type="radio" /><strong>B.</strong><span>y = 9.500x + 5.000</span></label><label class="assignment-option is-selected"><input checked name="q3" type="radio" /><strong>C.</strong><span>y = 10.000x - 500(x - 10)</span></label><label class="assignment-option"><input name="q3" type="radio" /><strong>D.</strong><span>y = 10.000x - 500x</span></label></div></article>
+                </section>
+                <section class="assignment-essay-box">
+                  <header><h3>Phần tự luận nộp kèm</h3><span class="status status-progress">File giáo viên upload</span></header>
+                  <div class="assignment-prompt-card"><div class="assignment-prompt-file"><span class="file-badge file-pdf">PDF</span><strong>De_bai_ham_so_bac_nhat.pdf</strong><span>420 KB</span></div><p>Lập hàm số biểu diễn số tiền y phải trả theo số quyển vở x, tính tiền khi mua 8 quyển và 15 quyển, sau đó giải thích vì sao bài toán có thể mô hình bằng hàm số bậc nhất từng phần.</p></div>
+                  <div class="assignment-submission-grid"><div class="assignment-upload-zone"><strong>Kéo thả tệp vào đây</strong><span>hoặc</span><button type="button">Chọn tệp</button><small>PDF, DOCX, JPG, PNG · tối đa 20MB</small></div><div class="assignment-or">HOẶC</div><textarea placeholder="Nhập câu trả lời tự luận của bạn vào đây..."></textarea></div>
+                  <div class="assignment-file-list"><div class="assignment-file-row"><span class="file-badge file-pdf">PDF</span><strong>Bai_lam_Toan_9A.pdf</strong><span>1.24 MB</span></div><div class="assignment-file-row"><span class="file-badge file-doc">DOC</span><strong>Loi_giai_chi_tiet.docx</strong><span>856 KB</span></div></div>
+                </section>
+              </div>
+              <footer class="assignment-work-actions"><button class="assignment-save" type="button">Lưu tạm</button><button class="assignment-continue" type="button">Tiếp tục làm bài</button><button class="assignment-submit" data-assignment-view-target="result" type="button">Nộp bài</button></footer>
+            </article>
+            <aside class="side-stack assignment-side">
+              <article class="note-card note-yellow"><h3>Thời gian còn lại</h3><strong class="assignment-timer">00:32:18</strong><p>Bài làm sẽ tự động nộp khi hết giờ.</p></article>
+              <article class="note-card note-purple"><h3>Tiến độ làm bài</h3><div class="assignment-progress-count"><strong>5</strong><span>/ 20 câu</span></div><div class="assignment-progress-track"><span style="width: 34%"></span></div><p>Bạn đã trả lời 5 câu hỏi.</p></article>
+              <article class="note-card note-green"><h3>Lưu ý</h3><ul><li>Chọn 1 đáp án đúng nhất.</li><li>Có thể quay lại câu trước.</li><li>Kiểm tra kỹ trước khi nộp.</li></ul></article>
+            </aside>
+          </div>
+
+          <div class="assignment-view" data-assignment-view="result">
+            <article class="panel assignment-main-panel assignment-result-panel">
+              <header class="assignment-work-hero"><span class="symbol status-done">Σ</span><div><h3>Ôn tập giữa kỳ</h3><div class="assignment-work-meta"><span>Môn: Toán 9A</span><span>Ngày nộp: 22/05 19:45</span><span>Trạng thái: Đã chấm</span><strong>Hoàn thành</strong></div></div></header>
+              <div class="assignment-result-grid"><section class="assignment-result-card score-card"><span>Điểm tổng</span><strong>8.5 / 10</strong><p>Bài tập đã hoàn thành và được giáo viên ghi nhận.</p></section><section class="assignment-result-card"><span>Trắc nghiệm</span><strong>17 / 20 câu đúng</strong><p>Điểm phần trắc nghiệm: 6.5 / 7</p></section><section class="assignment-result-card"><span>Tự luận</span><strong>3.0 / 3</strong><p>Điểm phần tự luận do giáo viên chấm.</p></section></div>
+              <section class="assignment-result-feedback"><h3>Đánh giá của giáo viên</h3><p>Lời giải rõ ràng, trình bày sạch sẽ. Cần chú ý dấu ở bước biến đổi cuối và kiểm tra lại đơn vị trong bài toán thực tế.</p><div class="assignment-result-review"><div><span>File bài nộp</span><strong>Bai_lam_Toan_9A.pdf</strong></div><div><span>Trạng thái chấm</span><strong>Đã chấm xong</strong></div></div></section>
+              <footer class="assignment-result-actions"><button class="assignment-continue" data-assignment-view-target="list" type="button">Quay lại danh sách</button><button class="assignment-submit" data-assignment-view-target="work" type="button">Xem bài làm</button></footer>
+            </article>
+            <aside class="side-stack assignment-side">
+              <article class="note-card note-yellow"><h3>Tóm tắt kết quả</h3><strong class="assignment-side-score">8.5 / 10</strong><p>Bài tập đã hoàn thành và được lưu trong sổ.</p></article>
+              <article class="note-card note-green"><h3>Nhận xét giáo viên</h3><ul><li>Bài làm rõ ràng, trình bày sạch sẽ.</li><li>Lời giải đầy đủ và 2 phần tốt.</li><li>Cần chú ý dấu ở bước biến đổi cuối.</li></ul></article>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="dock-wrap"><svg class="dock-bg" viewBox="0 0 524 56"><path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" /></svg></div>
+    <nav class="dock"><a data-page-link href="overview.html" title="Tổng quan"><span><span class="icon" data-icon="layout"></span></span></a><a data-page-link href="schedule.html" title="Lịch học"><span><span class="icon" data-icon="calendar"></span></span></a><a data-page-link href="assignments.html" title="Bài tập"><span><span class="icon" data-icon="file"></span></span></a><a data-page-link href="resources.html" title="Tài liệu"><span><span class="icon" data-icon="book"></span></span></a><a data-page-link href="discussion.html" title="Trao đổi"><span><span class="icon" data-icon="message"></span></span></a><a href="overview.html#ai" title="Trợ lý AI"><span><span class="icon" data-icon="sparkles"></span></span></a></nav>
+    <div class="drawer-overlay" data-drawer-overlay></div><aside class="class-drawer" data-class-drawer><div class="drawer-head"><h3>Lớp của tôi</h3><button class="drawer-close" data-close-drawer type="button"><span class="icon" data-icon="close"></span></button></div><div class="class-notes"><button class="note-tab paper-yellow active" type="button"><strong>Toán 9A</strong><span>Cô Lan</span><small>Đang theo học</small></button><button class="note-tab add" data-modal-target="join-class" type="button">+ Thêm lớp</button></div></aside>
+    <div class="modal-backdrop" data-modal="join-class" role="presentation"><section aria-label="Tham gia lớp học" aria-modal="true" class="student-modal join-modal" role="dialog"><button aria-label="Đóng popup tham gia lớp học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button><header class="modal-header"><span class="modal-icon b-green"><span class="icon" data-icon="plus"></span></span><div><h2>Tham gia lớp học</h2><p>Nhập mã lớp hoặc link mời do giáo viên cung cấp để thêm lớp vào sổ học tập.</p></div></header><div class="join-grid"><label><span>Mã lớp</span><input placeholder="Ví dụ: MATH9A" /></label><label><span>Link mời</span><input placeholder="https://tuteclass.vn/join/..." /></label></div><div class="modal-actions"><button data-close-modal type="button">Hủy</button><button class="primary" type="button">Tham gia lớp</button></div></section></div>
+  </main>
+  <script src="../scripts/icons.js"></script><script src="../scripts/app.js"></script>
+</body>
+</html>
