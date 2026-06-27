@@ -9,7 +9,7 @@
 <body>
   <main class="student-app">
     <header class="topbar">
-      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <a class="brand" href="../../index.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
       <nav class="hnav">
         <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
         <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
@@ -25,16 +25,35 @@
         <div class="class-row"><button class="title-switch" data-open-drawer type="button"><span>Lớp đang học</span><strong>Toán 9A</strong><span class="icon" data-icon="chev"></span></button></div>
         <div class="page-head"><div><div class="breadcrumb">Trang học sinh / <b>Toán 9A</b></div><h1>Lịch học lớp</h1><div class="sub">Xem thời khóa biểu theo tuần và các buổi học sắp tới.</div></div><div class="date-pill">Tháng 5, 2024 <span class="icon" data-icon="calendar"></span></div></div>
         <section class="grid with-sidebar">
-          <article class="panel schedule-main-panel">
-            <header class="panel-head"><div class="panel-title"><span class="panel-icon b-blue"><span class="icon" data-icon="calendar"></span></span><h3>Thời khóa biểu tuần này</h3></div><span class="more">13/05 - 19/05</span></header>
-            <div class="week-board">
-              <section class="week-day"><header><strong>Thứ 2</strong><span>13/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Toán 9A</strong><span>19:00 - 20:30</span><small>Cô Lan</small></article></section>
-              <section class="week-day"><header><strong>Thứ 3</strong><span>14/05</span></header><p>Tự học</p></section>
-              <section class="week-day"><header><strong>Thứ 4</strong><span>15/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Tiếng Anh 9A</strong><span>19:00 - 20:30</span><small>Thầy Nam</small></article></section>
-              <section class="week-day"><header><strong>Thứ 5</strong><span>16/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Thực hành</strong><span>17:00 - 18:30</span><small>Lab 03</small></article></section>
-              <section class="week-day"><header><strong>Thứ 6</strong><span>17/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Toán 9A</strong><span>19:00 - 20:30</span><small>Ôn tập</small></article></section>
-              <section class="week-day"><header><strong>Thứ 7</strong><span>18/05</span></header><p>Luyện bài tập</p></section>
-              <section class="week-day"><header><strong>CN</strong><span>19/05</span></header><p>Nghỉ</p></section>
+          <article class="student-calendar" aria-label="Thời khóa biểu">
+            <div class="student-cal-toolbar">
+              <div class="student-cal-toolbar-left">
+                <div class="student-cal-view-toggle" role="group" aria-label="Kiểu hiển thị lịch">
+                  <button class="active" data-calendar-view="week" type="button">Tuần</button>
+                  <button data-calendar-view="month" type="button">Tháng</button>
+                </div>
+                <button class="student-cal-button" data-calendar-today type="button">Hôm nay</button>
+              </div>
+              <div class="student-cal-navigation">
+                <button class="student-cal-button icon-only" data-calendar-prev type="button" aria-label="Tuần trước"><span class="icon" data-icon="left"></span></button>
+                <strong data-calendar-range>13/05 - 19/05/2024</strong>
+                <button class="student-cal-button icon-only" data-calendar-next type="button" aria-label="Tuần sau"><span class="icon" data-icon="right"></span></button>
+              </div>
+              <div class="student-cal-title"><span class="icon" data-icon="calendar"></span><span>Thời khóa biểu</span></div>
+            </div>
+            <div class="student-cal-shell">
+              <div class="student-cal-scroll" data-calendar-week-panel>
+                <div class="student-cal-grid" data-calendar-grid></div>
+              </div>
+              <div class="student-month-scroll" data-calendar-month-panel hidden>
+                <div class="student-month-grid" data-calendar-month-grid></div>
+              </div>
+              <div class="student-cal-legend" data-calendar-legend>
+                <span><i class="green"></i> Toán 9A</span>
+                <span><i class="blue"></i> Tiếng Anh 9A</span>
+                <span><i class="violet"></i> Tự học</span>
+                <span><i class="amber"></i> Thực hành</span>
+              </div>
             </div>
           </article>
           <aside class="side-stack schedule-side">
@@ -102,7 +121,14 @@
         </div>
       </section>
     </div>
+
+    <div class="day-sessions-backdrop" data-day-sessions-modal role="presentation">
+      <section class="day-sessions-modal" role="dialog" aria-modal="true" aria-labelledby="schedule-day-sessions-title">
+        <header><h2 id="schedule-day-sessions-title" data-day-sessions-title>Buổi học trong ngày</h2><button data-close-day-sessions type="button" aria-label="Đóng danh sách buổi học"><span class="icon" data-icon="close"></span></button></header>
+        <div class="day-sessions-list" data-day-sessions-list></div>
+      </section>
+    </div>
   </main>
-  <script src="../scripts/icons.js"></script><script src="../scripts/app.js"></script>
+  <script src="../scripts/icons.js"></script><script src="../scripts/schedule.js"></script><script src="../scripts/app.js"></script>
 </body>
 </html>

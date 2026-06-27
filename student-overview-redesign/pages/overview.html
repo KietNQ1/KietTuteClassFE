@@ -9,7 +9,7 @@
 <body>
   <main class="student-app">
     <header class="topbar">
-      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <a class="brand" href="../../index.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
       <nav class="hnav" aria-label="Student sections">
         <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
         <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
@@ -47,7 +47,7 @@
         </div>
 
         <section class="kpis">
-          <article class="kpi">
+          <article class="kpi" data-modal-target="grades" role="button" tabindex="0">
             <div class="top"><span class="badge b-green"><span class="icon" data-icon="star"></span></span><span class="trend b-green">Trung bình</span></div>
             <span class="label">Điểm hiện tại</span><strong class="value">8.7</strong><span class="note">Cập nhật: 12/05</span>
           </article>
@@ -55,15 +55,15 @@
             <div class="top"><span class="badge b-amber"><span class="icon" data-icon="wallet"></span></span><span class="trend b-amber">Đã thanh toán</span></div>
             <span class="label">Học phí</span><strong class="value">Kỳ thu 1</strong><span class="note">Đến ngày 30/09</span>
           </article>
-          <article class="kpi">
+          <article class="kpi" data-modal-target="due-assignments" role="button" tabindex="0">
             <div class="top"><span class="badge b-violet"><span class="icon" data-icon="checklist"></span></span><span class="trend b-violet">Cần nộp</span></div>
             <span class="label">Hạn nộp bài</span><strong class="value">17:00</strong><span class="note">Thứ 6, 17/05</span>
           </article>
-          <article class="kpi">
+          <article class="kpi" data-modal-target="schedule-calendar" role="button" tabindex="0">
             <div class="top"><span class="badge b-blue"><span class="icon" data-icon="calendar"></span></span><span class="trend b-blue">Hôm nay</span></div>
             <span class="label">Lịch học</span><strong class="value">18:30</strong><span class="note">Phòng online 2</span>
           </article>
-          <article class="kpi">
+          <article class="kpi" data-modal-target="attendance" role="button" tabindex="0">
             <div class="top"><span class="badge b-rose"><span class="icon" data-icon="chart"></span></span><span class="trend b-rose">Điểm danh</span></div>
             <span class="label">Tổng kết điểm danh</span><strong class="value">18/20</strong><span class="note">Đã đi học 18 buổi</span>
           </article>
@@ -184,8 +184,139 @@
         </div>
       </section>
     </div>
+
+    <div class="modal-backdrop" data-modal="attendance" role="presentation">
+      <section aria-labelledby="attendance-title" aria-modal="true" class="student-modal attendance-modal" role="dialog">
+        <button aria-label="Đóng popup điểm danh" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header attendance-modal-header">
+          <span class="modal-icon b-rose"><span class="icon" data-icon="chart"></span></span>
+          <div>
+            <h2 id="attendance-title">Chi tiết điểm danh</h2>
+            <p>Theo dõi tỷ lệ chuyên cần và trạng thái từng buổi học của lớp Toán 9A.</p>
+          </div>
+        </header>
+        <div class="attendance-modal-body">
+          <section class="attendance-overview" aria-label="Tổng quan chuyên cần">
+            <div class="attendance-chart" role="img" aria-label="Đã điểm danh 18 trên 20 buổi, đạt 90 phần trăm">
+              <div><strong>90%</strong><span>Chuyên cần</span></div>
+            </div>
+            <div class="attendance-count"><strong>18/20</strong><span>buổi đã có mặt</span></div>
+            <div class="attendance-summary-grid">
+              <article><i class="present"></i><div><strong>18</strong><span>Có điểm danh</span></div></article>
+              <article><i class="absent"></i><div><strong>2</strong><span>Vắng</span></div></article>
+            </div>
+            <div class="attendance-insight"><span class="icon" data-icon="star"></span><p>Duy trì thêm 2 buổi có mặt liên tiếp để giữ tỷ lệ chuyên cần từ 90%.</p></div>
+          </section>
+          <section class="attendance-history" aria-label="Lịch sử điểm danh">
+            <header class="attendance-history-head">
+              <div><h3>Danh sách buổi học</h3><span>20 buổi gần nhất</span></div>
+              <div class="attendance-sort"><span>Sắp xếp</span><div class="attendance-sort-dropdown" data-attendance-sort><button aria-expanded="false" data-attendance-sort-toggle type="button"><span data-attendance-sort-label>Mới nhất</span><span class="icon" data-icon="chev"></span></button><div class="attendance-sort-menu" role="listbox"><button class="active" data-attendance-sort-value="newest" role="option" type="button">Mới nhất</button><button data-attendance-sort-value="oldest" role="option" type="button">Cũ nhất</button></div></div></div>
+            </header>
+            <div class="attendance-session-list" data-attendance-list></div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" data-modal="grades" role="presentation">
+      <section aria-labelledby="grades-title" aria-modal="true" class="student-modal grades-modal" role="dialog">
+        <button aria-label="Đóng popup chi tiết điểm" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header grades-modal-header">
+          <span class="modal-icon b-green"><span class="icon" data-icon="star"></span></span>
+          <div>
+            <h2 id="grades-title">Kết quả kiểm tra</h2>
+            <p>Theo dõi diễn biến điểm và kết quả các bài kiểm tra trong lớp Toán 9A.</p>
+          </div>
+        </header>
+        <div class="grades-modal-body">
+          <section class="grades-chart-panel" aria-label="Biểu đồ diễn biến điểm">
+            <header><div><h3>Biểu đồ điểm</h3><span>8 bài kiểm tra gần nhất</span></div><span class="grades-chart-trend">+0.7 điểm</span></header>
+            <div class="grades-chart">
+              <div class="grades-chart-scale" aria-hidden="true"><span>10</span><span>8</span><span>6</span><span>4</span><span>2</span><span>0</span></div>
+              <div class="grades-chart-bars">
+                <div class="grade-bar"><strong>8.0</strong><i style="--grade-height:80%"></i><span>KT 1</span></div>
+                <div class="grade-bar"><strong>8.5</strong><i style="--grade-height:85%"></i><span>15 phút</span></div>
+                <div class="grade-bar"><strong>7.5</strong><i style="--grade-height:75%"></i><span>KT 2</span></div>
+                <div class="grade-bar"><strong>9.0</strong><i style="--grade-height:90%"></i><span>Giữa kỳ</span></div>
+                <div class="grade-bar"><strong>8.8</strong><i style="--grade-height:88%"></i><span>KT 3</span></div>
+                <div class="grade-bar"><strong>9.2</strong><i style="--grade-height:92%"></i><span>1 tiết</span></div>
+                <div class="grade-bar"><strong>8.6</strong><i style="--grade-height:86%"></i><span>KT 4</span></div>
+                <div class="grade-bar"><strong>9.5</strong><i style="--grade-height:95%"></i><span>Cuối kỳ</span></div>
+              </div>
+            </div>
+            <div class="grades-summary">
+              <article><span>Điểm trung bình</span><strong>8.7</strong></article>
+              <article><span>Điểm cao nhất</span><strong>9.5</strong></article>
+              <article><span>Đã hoàn thành</span><strong>12 bài</strong></article>
+            </div>
+          </section>
+          <section class="grades-history" aria-label="Danh sách bài kiểm tra">
+            <header class="grades-history-head">
+              <div><h3>Bài kiểm tra đã làm</h3><span>12 kết quả trong lớp Toán 9A</span></div>
+              <div class="attendance-sort"><span>Sắp xếp</span><div class="attendance-sort-dropdown" data-grades-sort><button aria-expanded="false" data-grades-sort-toggle type="button"><span data-grades-sort-label>Mới nhất</span><span class="icon" data-icon="chev"></span></button><div class="attendance-sort-menu" role="listbox"><button class="active" data-grades-sort-value="newest" role="option" type="button">Mới nhất</button><button data-grades-sort-value="oldest" role="option" type="button">Cũ nhất</button></div></div></div>
+            </header>
+            <div class="grades-test-list" data-grades-list></div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" data-modal="due-assignments" role="presentation">
+      <section aria-labelledby="due-assignments-title" aria-modal="true" class="student-modal due-assignments-modal" role="dialog">
+        <button aria-label="Đóng popup bài tập cần nộp" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header due-assignments-header">
+          <span class="modal-icon b-violet"><span class="icon" data-icon="checklist"></span></span>
+          <div><h2 id="due-assignments-title">Bài tập cần nộp</h2><p>Danh sách được xếp từ hạn nộp gần nhất đến xa nhất.</p></div>
+        </header>
+        <div class="due-assignments-summary"><span><b>6</b> bài đang chờ</span><span><b>2</b> bài sắp đến hạn</span></div>
+        <div class="due-assignment-list">
+          <a class="due-assignment-item urgent" href="assignments.html?view=work&amp;assignment=chapter-2"><span class="due-order">1</span><div><strong>Bài tập chương 2: Hàm số bậc nhất</strong><span>20 câu · 45 phút · Toán 9A</span></div><time><b>25/05</b><span>21:00</span></time><span class="due-label">Gần nhất</span><span class="icon" data-icon="right"></span></a>
+          <a class="due-assignment-item urgent" href="assignments.html?view=work&amp;assignment=chapter-3"><span class="due-order">2</span><div><strong>Trắc nghiệm chương 3</strong><span>20 câu · 30 phút · Toán 9A</span></div><time><b>28/05</b><span>21:00</span></time><span class="due-label">Đang làm</span><span class="icon" data-icon="right"></span></a>
+          <a class="due-assignment-item" href="assignments.html?view=work&amp;assignment=quick-review"><span class="due-order">3</span><div><strong>Phiếu ôn tập hàm số</strong><span>15 câu · 25 phút · Toán 9A</span></div><time><b>01/06</b><span>17:00</span></time><span class="due-label">Chưa làm</span><span class="icon" data-icon="right"></span></a>
+          <a class="due-assignment-item" href="assignments.html?view=work&amp;assignment=equations"><span class="due-order">4</span><div><strong>Bài tập phương trình bậc hai</strong><span>18 câu · 40 phút · Toán 9A</span></div><time><b>05/06</b><span>21:00</span></time><span class="due-label">Chưa làm</span><span class="icon" data-icon="right"></span></a>
+          <a class="due-assignment-item" href="assignments.html?view=work&amp;assignment=geometry"><span class="due-order">5</span><div><strong>Bài trắc nghiệm hình học</strong><span>25 câu · 40 phút · Toán 9A</span></div><time><b>08/06</b><span>21:00</span></time><span class="due-label">Chưa làm</span><span class="icon" data-icon="right"></span></a>
+          <a class="due-assignment-item" href="assignments.html?view=work&amp;assignment=advanced"><span class="due-order">6</span><div><strong>Luyện tập tổng hợp nâng cao</strong><span>12 câu · 35 phút · Toán 9A</span></div><time><b>12/06</b><span>20:00</span></time><span class="due-label">Chưa làm</span><span class="icon" data-icon="right"></span></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" data-modal="schedule-calendar" role="presentation">
+      <section aria-labelledby="schedule-calendar-title" aria-modal="true" class="student-modal schedule-calendar-modal" role="dialog">
+        <button aria-label="Đóng popup lịch học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header schedule-calendar-header">
+          <span class="modal-icon b-blue"><span class="icon" data-icon="calendar"></span></span>
+          <div>
+            <h2 id="schedule-calendar-title">Lịch học theo tháng</h2>
+            <p>Xem các buổi học và hoạt động đã lên lịch trong lớp Toán 9A.</p>
+          </div>
+        </header>
+        <div class="schedule-calendar-body">
+          <div class="schedule-month-toolbar">
+            <button data-overview-month-prev type="button" aria-label="Tháng trước"><span class="icon" data-icon="left"></span></button>
+            <strong data-overview-month-label>Tháng 5, 2024</strong>
+            <button data-overview-month-next type="button" aria-label="Tháng sau"><span class="icon" data-icon="right"></span></button>
+          </div>
+          <div class="overview-month-calendar-scroll"><div class="student-month-grid" data-overview-month-grid></div></div>
+          <div class="overview-month-legend">
+            <span><i class="green"></i> Toán 9A</span><span><i class="blue"></i> Tiếng Anh 9A</span><span><i class="violet"></i> Tự học</span><span><i class="amber"></i> Thực hành</span>
+          </div>
+          <section class="overview-month-upcoming">
+            <header><h3>Buổi học sắp tới</h3><span>2 lịch gần nhất</span></header>
+            <div><article><i class="green"></i><div><strong>Toán 9A</strong><span>Thứ 6, 17/05 · 18:30 - 20:00</span></div><b>Phòng online 2</b></article><article><i class="blue"></i><div><strong>Tiếng Anh 9A</strong><span>Thứ 4, 22/05 · 19:00 - 20:30</span></div><b>Phòng online 1</b></article></div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <div class="day-sessions-backdrop" data-overview-day-sessions-modal role="presentation">
+      <section class="day-sessions-modal" role="dialog" aria-modal="true" aria-labelledby="overview-day-sessions-title">
+        <header><h2 id="overview-day-sessions-title" data-overview-day-sessions-title>Buổi học trong ngày</h2><button data-close-overview-day-sessions type="button" aria-label="Đóng danh sách buổi học"><span class="icon" data-icon="close"></span></button></header>
+        <div class="day-sessions-list" data-overview-day-sessions-list></div>
+      </section>
+    </div>
   </main>
   <script src="../scripts/icons.js"></script>
+  <script src="../scripts/overview.js"></script>
   <script src="../scripts/app.js"></script>
 </body>
 </html>
