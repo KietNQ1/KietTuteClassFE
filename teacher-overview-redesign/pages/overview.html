@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuteClass · Tổng quan lớp</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+<div class="teacher-app">
+    <!-- top bar (device bezel) -->
+    <header class="topbar">
+      <div class="brand">
+        <img src="../../TuteLogo.png" alt="TuteClass" class="brand-logo" />
+      </div>
+
+      <nav class="hnav">
+        <a href="overview.html" class="hic" data-page-link title="Trang chủ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          <span>Trang chủ</span>
+        </a>
+
+        <a href="calendar.html" class="hic" data-page-link title="Lịch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span>Lịch</span>
+        </a>
+
+        <a href="#" class="hic" data-page-link title="Học viên">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Học viên</span>
+        </a>
+
+        <a href="#" class="hic" data-page-link title="Bài tập">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          <span>Bài tập</span>
+        </a>
+
+        <a href="#" class="hic" data-page-link title="Báo cáo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
+          <span>Báo cáo</span>
+        </a>
+
+        <div class="search" id="search">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="s-input" type="text" placeholder="Tìm kiếm lớp, học sinh, bài tập..." />
+        </div>
+      </nav>
+
+      <div class="top-actions">
+        <button class="icon-btn" title="Thông báo"><span class="dot"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></button>
+        <button class="profile" title="Tài khoản">
+          <div class="avatar">NL</div>
+          <div class="meta">
+            <b>Cô Nguyễn Lan</b>
+            <small>Giáo viên</small>
+          </div>
+          <span class="prof-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ LIGHT STAGE ============ -->
+    <div class="main">
+      <div class="content">
+        <!-- page header -->
+        <div class="page-head">
+          <div>
+            <button class="title-switch" data-open-drawer type="button" title="Đổi lớp đang xem">
+              <h1>Tổng quan lớp <b id="currentClass">Toán 9A</b></h1>
+              <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="sub">Chào Cô Lan, đây là tình hình lớp học hôm nay 👋</div>
+          </div>
+          <div class="date-pill">
+            <span id="currentDate">Thứ 5, 02/05/2025</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="kpis">
+          <div class="kpi">
+            <div class="top">
+              <div class="badge b-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
+              <span class="trend b-green">+0.3</span>
+            </div>
+            <div class="label">Điểm trung bình lớp</div>
+            <div class="value">8.2</div>
+            <div class="note">Cập nhật 12/05</div>
+          </div>
+
+          <div class="kpi">
+            <div class="top">
+              <div class="badge b-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+              <span class="trend b-amber">93%</span>
+            </div>
+            <div class="label">Học phí đã nộp</div>
+            <div class="value">28<small> /30 học sinh</small></div>
+            <div class="note">Còn 2 bạn chưa nộp</div>
+          </div>
+
+          <div class="kpi">
+            <div class="top">
+              <div class="badge b-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+              <span class="trend b-rose">Gấp</span>
+            </div>
+            <div class="label">Bài cần chấm</div>
+            <div class="value">6 <small>bài</small></div>
+            <div class="note">Trước buổi học tới</div>
+          </div>
+
+          <div class="kpi">
+            <div class="top">
+              <div class="badge b-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+              <span class="trend b-blue">Sắp tới</span>
+            </div>
+            <div class="label">Lịch dạy tiếp theo</div>
+            <div class="value" style="font-size:20px">Thứ 5, 14:00</div>
+            <div class="note">Còn 2 ngày nữa</div>
+          </div>
+
+          <div class="kpi">
+            <div class="top">
+              <div class="badge b-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+              <span class="trend b-violet">90%</span>
+            </div>
+            <div class="label">Tiến độ dạy</div>
+            <div class="value">18<small> /20 buổi</small></div>
+            <div class="note">Còn 2 buổi cuối kỳ</div>
+          </div>
+        </div>
+
+        <!-- lower grid: 3 equal columns -->
+        <div class="grid">
+          <!-- COLUMN 1: upcoming schedule -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="title">
+                <div class="ic b-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+                <h3>Lịch sắp tới</h3>
+              </div>
+              <span class="more">Cả tuần</span>
+            </div>
+            <div class="sched">
+              <div class="sched-item">
+                <div class="day"><b>15</b><small>Th 5</small></div>
+                <div class="info"><b>Toán 9A · Chương 4</b><small>14:00 – 15:30 · Phòng online 2</small></div>
+              </div>
+              <div class="sched-item">
+                <div class="day"><b>16</b><small>Th 6</small></div>
+                <div class="info"><b>Họp phụ huynh</b><small>19:00 – 20:00 · Trực tuyến</small></div>
+              </div>
+              <div class="sched-item">
+                <div class="day"><b>18</b><small>CN</small></div>
+                <div class="info"><b>Toán 9A · Ôn giữa kỳ</b><small>09:00 – 11:00 · Phòng online 2</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: class status -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="title">
+                <div class="ic b-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                <h3>Tình trạng lớp học</h3>
+              </div>
+              <span class="more">Xem chi tiết</span>
+            </div>
+
+            <div class="donut-wrap">
+              <div class="donut">
+                <div class="donut-center">
+                  <b>30</b>
+                  <small>học sinh</small>
+                </div>
+              </div>
+              <ul class="donut-legend">
+                <li>
+                  <span class="dot dot-green"></span>
+                  <div><span class="lg-name">Vững kiến thức</span><span class="lg-val">20 học sinh (66.7%)</span></div>
+                </li>
+                <li>
+                  <span class="dot dot-amber"></span>
+                  <div><span class="lg-name">Cần hỗ trợ</span><span class="lg-val">7 học sinh (23.3%)</span></div>
+                </li>
+                <li>
+                  <span class="dot dot-rose"></span>
+                  <div><span class="lg-name">Nguy cơ</span><span class="lg-val">3 học sinh (10%)</span></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini">
+                <div class="v t-green">96%</div>
+                <div class="l">Tỷ lệ nộp bài đúng hạn</div>
+              </div>
+              <div class="mini">
+                <div class="v t-green">90%</div>
+                <div class="l">Đi học đầy đủ tuần này</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: tasks + notes (toggle) -->
+          <div class="panel tasknote">
+            <div class="panel-head">
+              <div class="seg">
+                <button class="seg-btn active" data-view="todo" onclick="switchTaskNote(this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  Việc cần làm
+                </button>
+                <button class="seg-btn" data-view="notes" onclick="switchTaskNote(this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+                  Ghi chú
+                </button>
+              </div>
+              <span class="more" id="taskNoteMore">3/5</span>
+            </div>
+
+            <ul class="todo" data-view="todo">
+              <li class="done"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4 10-10"/></svg></span><span>Chấm bài kiểm tra chương 3</span></li>
+              <li class="done"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4 10-10"/></svg></span><span>Nhắc học sinh nộp bài tập tuần 18</span></li>
+              <li class="done"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4 10-10"/></svg></span><span>Soạn bài luyện tập Đại số</span></li>
+              <li><span class="check"></span><span>Gửi thông báo khóa ôn cho phụ huynh</span><span class="tag b-rose">Hôm nay</span></li>
+              <li><span class="check"></span><span>Chuẩn bị slide bài mới</span><span class="tag b-amber">Thứ 5</span></li>
+            </ul>
+
+            <ul class="note-list" data-view="notes" hidden>
+              <li><span class="pin">1</span> Lớp đã cải thiện rõ rệt về bài tập hình học.</li>
+              <li><span class="pin">2</span> Cân nhắc nhắc một số bạn nộp bài đúng hạn hơn.</li>
+              <li><span class="pin">3</span> Chuẩn bị nội dung ôn tập giữa kỳ vào tuần tới.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ BOTTOM DOCK (cradled by single SVG ogee hump) ============ -->
+    <div class="dock-wrap">
+    <svg class="dock-bg" viewBox="0 0 524 56" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" />
+    </svg>
+    <nav class="dock">
+      <button class="dock-btn active" title="Tổng quan">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>
+        <span>Tổng quan</span>
+      </button>
+      <button class="dock-btn" title="Lịch dạy" onclick="window.location.href='calendar.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <span>Lịch dạy</span>
+      </button>
+      <button class="dock-btn" title="Học viên">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span>Học viên</span>
+      </button>
+      <button class="dock-btn" title="Học phí">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span>
+        <span>Học phí</span>
+      </button>
+
+      <button class="dock-btn" title="Bài tập">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+        <span>Bài tập</span>
+      </button>
+      <button class="dock-btn" title="Tài liệu">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <span>Tài liệu</span>
+      </button>
+      <button class="dock-btn" title="Trao đổi">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span>Trao đổi</span>
+      </button>
+
+      <button class="dock-btn" title="Trợ lý AI">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></span>
+        <span>Trợ lý AI</span>
+      </button>
+    </nav>
+    </div>
+
+    <!-- ============ CLASS DRAWER (sidebar) ============ -->
+    <div class="drawer-overlay" data-drawer-overlay></div>
+    <aside class="drawer" data-class-drawer>
+      <div class="drawer-head">
+        <h3>Lớp của tôi</h3>
+        <button class="drawer-close" data-close-drawer type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="notes">
+        <div class="note-tab paper-yellow active" onclick="selectClass(this)">
+          <div class="cls">Toán 9A</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 30 học sinh</div>
+        </div>
+        <div class="note-tab paper-blue" onclick="selectClass(this)">
+          <div class="cls">Web Foundation K12</div>
+          <div class="tea">Cô Lan</div>
+          <div class="meta">👥 24 học sinh</div>
+        </div>
+        <div class="note-tab paper-pink" onclick="selectClass(this)">
+          <div class="cls">Vật lý 9A</div>
+          <div class="tea">Thầy Minh</div>
+          <div class="meta">👥 28 học sinh</div>
+        </div>
+        <div class="note-tab paper-violet" onclick="selectClass(this)">
+          <div class="cls">Ngữ văn 9A</div>
+          <div class="tea">Cô Hoa</div>
+          <div class="meta">👥 26 học sinh</div>
+        </div>
+        <div class="note-tab add">+ Thêm lớp</div>
+      </div>
+    </aside>
+  </div>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/overview.js"></script>
+</body>
+</html>

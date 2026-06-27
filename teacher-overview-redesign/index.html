@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher redesign · Index</title>
+  <link rel="stylesheet" href="./styles/pages.css" />
+  <style>
+    body { overflow: auto; }
+    .index-wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: var(--bg);
+    }
+    .index-card {
+      width: min(640px, 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .index-card img {
+      height: 34px;
+      margin-bottom: 18px;
+    }
+    .index-card h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .index-card p {
+      color: var(--ink-soft);
+      margin: 0 0 22px;
+    }
+    .index-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .index-links a {
+      display: grid;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      font-weight: 700;
+    }
+    .index-links a:hover {
+      border-color: var(--accent-soft);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    @media (max-width: 560px) {
+      .index-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="index-wrap">
+    <section class="index-card">
+      <img src="../TuteLogo.png" alt="TuteClass" />
+      <h1>Teacher overview redesign</h1>
+      <p>Preview đã được chia theo từng trang, CSS và script riêng — cùng cấu trúc với student-overview-redesign.</p>
+      <div class="index-links">
+        <a href="./pages/overview.html">Tổng quan lớp</a>
+        <a href="./pages/calendar.html">Lịch dạy</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
