@@ -1,0 +1,551 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(17, 23, 34, .48);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.student-modal {
+  position: relative;
+  width: min(100%, 620px);
+  max-height: min(86vh, 760px);
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid rgba(232, 236, 242, .94);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(254,251,246,.98)),
+    var(--surface);
+  box-shadow: 0 34px 90px -44px rgba(17, 23, 34, .82);
+  transform: translateY(14px) scale(.98);
+  transition: transform .22s ease;
+}
+
+.modal-backdrop.open .student-modal {
+  transform: translateY(0) scale(1);
+}
+
+.student-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.student-modal::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(139, 147, 163, .4);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-header {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  padding-right: 42px;
+  margin-bottom: 18px;
+}
+
+.modal-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+}
+
+.modal-header h2 {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.modal-header p {
+  margin: 5px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.modal-actions button,
+.modal-soft-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink-soft);
+  font-weight: 800;
+}
+
+.modal-actions .primary,
+.modal-primary-button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.join-grid,
+.tuition-summary,
+.lesson-popup-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.join-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.join-grid label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.join-grid input,
+.lesson-comment-form input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  outline: 0;
+  background: #f7f8fa;
+  color: var(--ink);
+}
+
+.tuition-modal,
+.lesson-modal {
+  width: min(100%, 1040px);
+}
+
+.lesson-modal {
+  width: min(96vw, 1320px);
+  max-height: 92vh;
+  padding: 16px;
+}
+
+.lesson-modal .modal-header {
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.lesson-modal .modal-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+.lesson-modal .modal-header h2 {
+  font-size: 20px;
+}
+
+.lesson-modal .modal-header p {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.lesson-modal .lesson-meta {
+  margin-top: 8px;
+}
+
+.tuition-summary {
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+}
+
+.modal-panel {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-modal .modal-panel {
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.modal-panel h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.invoice-list,
+.payment-steps,
+.lesson-files,
+.lesson-discussion-list {
+  display: grid;
+  gap: 10px;
+}
+
+.invoice-card,
+.payment-step,
+.lesson-file,
+.lesson-comment {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fbfcfd;
+}
+
+.invoice-card {
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+}
+
+.invoice-icon,
+.lesson-file-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--rose-bg);
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.invoice-card strong,
+.lesson-file strong,
+.lesson-comment strong {
+  display: block;
+  font-size: 14px;
+}
+
+.invoice-card span,
+.payment-step span,
+.lesson-file span,
+.lesson-comment span,
+.lesson-assignment-text {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.invoice-card .amount {
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.payment-status {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 136px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: var(--green-bg);
+  color: var(--green);
+  text-align: center;
+}
+
+.payment-check {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.payment-step {
+  grid-template-columns: 32px minmax(0, 1fr);
+}
+
+.payment-step b {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.lesson-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #f3f6f9;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.lesson-popup-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.lesson-popup-grid.bottom {
+  grid-template-columns: minmax(0, .9fr) minmax(0, .7fr) minmax(0, 1.1fr);
+}
+
+.lesson-modal .lesson-popup-grid {
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.lesson-modal .lesson-popup-grid.bottom {
+  grid-template-columns: minmax(0, .95fr) minmax(0, .68fr) minmax(0, 1.25fr);
+}
+
+.lesson-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.lesson-modal .lesson-panel-title {
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.lesson-modal .lesson-panel-title .icon {
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+}
+
+.lesson-modal .modal-panel h3 {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.lesson-panel-title .icon {
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.lesson-agenda,
+.lesson-notes {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-modal .lesson-agenda,
+.lesson-modal .lesson-notes,
+.lesson-modal .lesson-files,
+.lesson-modal .lesson-discussion-list {
+  gap: 7px;
+}
+
+.lesson-agenda li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+.lesson-agenda b {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: var(--green-bg);
+  color: var(--green);
+  font-size: 12px;
+}
+
+.lesson-agenda p,
+.lesson-notes li,
+.lesson-comment p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.lesson-modal .lesson-agenda p,
+.lesson-modal .lesson-notes li,
+.lesson-modal .lesson-comment p,
+.lesson-modal .lesson-assignment-text {
+  font-size: 12.5px;
+  line-height: 1.38;
+}
+
+.lesson-modal .lesson-file,
+.lesson-modal .lesson-comment {
+  padding: 9px;
+}
+
+.lesson-modal .lesson-comment-form {
+  margin-top: 8px;
+}
+
+.lesson-modal .lesson-comment-form input {
+  height: 36px;
+}
+
+.lesson-notes li {
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: #fbfcfd;
+}
+
+.lesson-file {
+  grid-template-columns: 44px minmax(0, 1fr) 36px;
+}
+
+.lesson-file-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-bg);
+  color: var(--blue);
+}
+
+.lesson-file button,
+.lesson-comment-form button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.lesson-comment {
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: start;
+}
+
+.lesson-avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green-bg);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.lesson-like {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.lesson-comment-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.kpi[data-modal-target] {
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.kpi[data-modal-target]:hover {
+  box-shadow: 0 16px 28px -22px rgba(29, 35, 48, .55);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 960px) {
+  .tuition-summary,
+  .lesson-popup-grid,
+  .lesson-popup-grid.bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-backdrop {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .student-modal {
+    max-height: 88vh;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .join-grid,
+  .invoice-card,
+  .lesson-file,
+  .lesson-comment {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-card .amount {
+    text-align: left;
+  }
+}

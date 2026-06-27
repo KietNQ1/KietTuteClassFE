@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuteClass · Student Resources</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+  <main class="student-app">
+    <header class="topbar">
+      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <nav class="hnav">
+        <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
+        <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
+        <a data-page-link href="assignments.html"><span class="icon" data-icon="checklist"></span>Bài tập</a>
+        <a data-page-link href="resources.html"><span class="icon" data-icon="book"></span>Tài liệu</a>
+        <a data-page-link href="discussion.html"><span class="icon" data-icon="message"></span>Trao đổi</a>
+        <label class="search"><span class="icon" data-icon="search"></span><input placeholder="Tìm tài liệu, video, link..." /></label>
+      </nav>
+      <div class="top-actions"><button class="icon-btn" type="button"><span class="dot"></span><span class="icon" data-icon="bell"></span></button><button class="profile" type="button"><span class="avatar">MA</span><span class="profile-meta"><b>Minh Anh</b><small>Học sinh</small></span><span class="icon" data-icon="chev"></span></button></div>
+    </header>
+    <section class="main">
+      <div class="content">
+        <div class="class-row"><button class="title-switch" data-open-drawer type="button"><span>Lớp đang học</span><strong>Toán 9A</strong><span class="icon" data-icon="chev"></span></button><button class="primary-action" type="button"><span class="icon" data-icon="file"></span>Tải mới</button></div>
+        <div class="page-head"><div><div class="breadcrumb">Trang học sinh / <b>Toán 9A</b></div><h1>Tài liệu lớp</h1><div class="sub">Xem tài liệu toàn môn, tài liệu theo buổi học, link học tập và video.</div></div></div>
+        <section class="grid with-sidebar">
+          <article class="panel">
+            <header class="panel-head"><div class="panel-title"><span class="panel-icon b-blue"><span class="icon" data-icon="book"></span></span><h3>Kho tài liệu</h3></div><span class="more">6 tài liệu</span></header>
+            <div class="filters"><button class="active">Tất cả</button><button>PDF</button><button>Word</button><button>Video</button><button>Link</button><button>Ảnh</button></div>
+            <div class="table resource-table">
+              <div class="table-head"><span>Tài liệu</span><span>Buổi/Chủ đề</span><span>Loại</span><span>Ngày đăng</span><span>Người đăng</span><span></span></div>
+              <article class="table-row"><div class="title-cell"><span class="file-badge file-pdf"><span class="icon" data-icon="file"></span></span><strong>Tóm tắt chương 2</strong></div><div><strong>Buổi 15</strong><span>Hàm số</span></div><span class="status file-pdf">PDF</span><span>25/05</span><span>Cô Lan</span><button>Xem</button></article>
+              <article class="table-row"><div class="title-cell"><span class="file-badge file-doc"><span class="icon" data-icon="file"></span></span><strong>Phiếu ôn tập giữa kỳ</strong></div><div><strong>Buổi 18</strong><span>Ôn tập</span></div><span class="status file-doc">Word</span><span>05/06</span><span>Cô Lan</span><button>Tải</button></article>
+              <article class="table-row"><div class="title-cell"><span class="file-badge file-video"><span class="icon" data-icon="send"></span></span><strong>Video hướng dẫn bài 15</strong></div><div><strong>Buổi 15</strong><span>Hàm số</span></div><span class="status file-video">Video</span><span>25/05</span><span>Cô Lan</span><button>Xem</button></article>
+              <article class="table-row"><div class="title-cell"><span class="file-badge file-link"><span class="icon" data-icon="link"></span></span><strong>Link luyện tập thêm</strong></div><div><strong>Chủ đề</strong><span>Hàm số</span></div><span class="status file-link">Link</span><span>27/05</span><span>Cô Lan</span><button>Mở</button></article>
+            </div>
+          </article>
+          <aside class="side-stack">
+            <article class="note-card note-purple"><h3>Tài liệu mới</h3><ul><li>Tóm tắt chương 2</li><li>Video hướng dẫn bài 15</li><li>Phiếu ôn tập giữa kỳ</li></ul></article>
+            <article class="note-card note-yellow"><h3>Gợi ý giáo viên</h3><p>Xem video bài 15 và làm phiếu ôn tập trước, sau đó luyện thêm qua link được chia sẻ.</p></article>
+            <article class="note-card note-green"><h3>Thống kê tài liệu</h3><ul><li>Tổng số: 48</li><li>PDF: 20</li><li>Video: 8</li><li>Link: 12</li></ul></article>
+          </aside>
+        </section>
+      </div>
+    </section>
+    <div class="dock-wrap"><svg class="dock-bg" viewBox="0 0 524 56"><path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" /></svg></div>
+    <nav class="dock"><a data-page-link href="overview.html" title="Tổng quan"><span><span class="icon" data-icon="layout"></span></span></a><a data-page-link href="schedule.html" title="Lịch học"><span><span class="icon" data-icon="calendar"></span></span></a><a data-page-link href="assignments.html" title="Bài tập"><span><span class="icon" data-icon="file"></span></span></a><a data-page-link href="resources.html" title="Tài liệu"><span><span class="icon" data-icon="book"></span></span></a><a data-page-link href="discussion.html" title="Trao đổi"><span><span class="icon" data-icon="message"></span></span></a><a href="overview.html#ai" title="Trợ lý AI"><span><span class="icon" data-icon="sparkles"></span></span></a></nav>
+    <div class="drawer-overlay" data-drawer-overlay></div><aside class="class-drawer" data-class-drawer><div class="drawer-head"><h3>Lớp của tôi</h3><button class="drawer-close" data-close-drawer type="button"><span class="icon" data-icon="close"></span></button></div><div class="class-notes"><button class="note-tab paper-yellow active" type="button"><strong>Toán 9A</strong><span>Cô Lan</span><small>Đang theo học</small></button><button class="note-tab add" data-modal-target="join-class" type="button">+ Thêm lớp</button></div></aside>
+    <div class="modal-backdrop" data-modal="join-class" role="presentation"><section aria-label="Tham gia lớp học" aria-modal="true" class="student-modal join-modal" role="dialog"><button aria-label="Đóng popup tham gia lớp học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button><header class="modal-header"><span class="modal-icon b-green"><span class="icon" data-icon="plus"></span></span><div><h2>Tham gia lớp học</h2><p>Nhập mã lớp hoặc link mời do giáo viên cung cấp để thêm lớp vào sổ học tập.</p></div></header><div class="join-grid"><label><span>Mã lớp</span><input placeholder="Ví dụ: MATH9A" /></label><label><span>Link mời</span><input placeholder="https://tuteclass.vn/join/..." /></label></div><div class="modal-actions"><button data-close-modal type="button">Hủy</button><button class="primary" type="button">Tham gia lớp</button></div></section></div>
+  </main>
+  <script src="../scripts/icons.js"></script><script src="../scripts/app.js"></script>
+</body>
+</html>

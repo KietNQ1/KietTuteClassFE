@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuteClass · Student Schedule</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body>
+  <main class="student-app">
+    <header class="topbar">
+      <a class="brand" href="overview.html"><img src="../../TuteLogo.png" alt="TuteClass" /></a>
+      <nav class="hnav">
+        <a data-page-link href="overview.html"><span class="icon" data-icon="home"></span>Tổng quan</a>
+        <a data-page-link href="schedule.html"><span class="icon" data-icon="calendar"></span>Lịch học</a>
+        <a data-page-link href="assignments.html"><span class="icon" data-icon="checklist"></span>Bài tập</a>
+        <a data-page-link href="resources.html"><span class="icon" data-icon="book"></span>Tài liệu</a>
+        <a data-page-link href="discussion.html"><span class="icon" data-icon="message"></span>Trao đổi</a>
+        <label class="search"><span class="icon" data-icon="search"></span><input placeholder="Tìm lịch, lớp, phòng học..." /></label>
+      </nav>
+      <div class="top-actions"><button class="icon-btn" type="button"><span class="dot"></span><span class="icon" data-icon="bell"></span></button><button class="profile" type="button"><span class="avatar">MA</span><span class="profile-meta"><b>Minh Anh</b><small>Học sinh</small></span><span class="icon" data-icon="chev"></span></button></div>
+    </header>
+    <section class="main">
+      <div class="content schedule-content">
+        <div class="class-row"><button class="title-switch" data-open-drawer type="button"><span>Lớp đang học</span><strong>Toán 9A</strong><span class="icon" data-icon="chev"></span></button></div>
+        <div class="page-head"><div><div class="breadcrumb">Trang học sinh / <b>Toán 9A</b></div><h1>Lịch học lớp</h1><div class="sub">Xem thời khóa biểu theo tuần và các buổi học sắp tới.</div></div><div class="date-pill">Tháng 5, 2024 <span class="icon" data-icon="calendar"></span></div></div>
+        <section class="grid with-sidebar">
+          <article class="panel schedule-main-panel">
+            <header class="panel-head"><div class="panel-title"><span class="panel-icon b-blue"><span class="icon" data-icon="calendar"></span></span><h3>Thời khóa biểu tuần này</h3></div><span class="more">13/05 - 19/05</span></header>
+            <div class="week-board">
+              <section class="week-day"><header><strong>Thứ 2</strong><span>13/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Toán 9A</strong><span>19:00 - 20:30</span><small>Cô Lan</small></article></section>
+              <section class="week-day"><header><strong>Thứ 3</strong><span>14/05</span></header><p>Tự học</p></section>
+              <section class="week-day"><header><strong>Thứ 4</strong><span>15/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Tiếng Anh 9A</strong><span>19:00 - 20:30</span><small>Thầy Nam</small></article></section>
+              <section class="week-day"><header><strong>Thứ 5</strong><span>16/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Thực hành</strong><span>17:00 - 18:30</span><small>Lab 03</small></article></section>
+              <section class="week-day"><header><strong>Thứ 6</strong><span>17/05</span></header><article class="lesson-pill" data-modal-target="lesson-detail" role="button" tabindex="0"><strong>Toán 9A</strong><span>19:00 - 20:30</span><small>Ôn tập</small></article></section>
+              <section class="week-day"><header><strong>Thứ 7</strong><span>18/05</span></header><p>Luyện bài tập</p></section>
+              <section class="week-day"><header><strong>CN</strong><span>19/05</span></header><p>Nghỉ</p></section>
+            </div>
+          </article>
+          <aside class="side-stack schedule-side">
+            <div class="assignment-side-stats schedule-side-stats">
+              <article class="assignment-stat-card"><span class="badge b-green"><span class="icon" data-icon="clock"></span></span><div><small>Buổi hôm nay</small><strong>2 buổi</strong></div><b class="b-green">Hôm nay</b></article>
+              <article class="assignment-stat-card"><span class="badge b-blue"><span class="icon" data-icon="calendar"></span></span><div><small>Sắp tới</small><strong>4 lịch</strong></div><b class="b-blue">Tuần này</b></article>
+              <article class="assignment-stat-card"><span class="badge b-amber"><span class="icon" data-icon="bell"></span></span><div><small>Nhắc nhở</small><strong>3 mục</strong></div><b class="b-amber">Cần xem</b></article>
+            </div>
+            <article class="panel"><header class="panel-head"><div class="panel-title"><span class="panel-icon b-green"><span class="icon" data-icon="clock"></span></span><h3>Agenda hôm nay</h3></div></header><div class="agenda-list"><article data-modal-target="lesson-detail" role="button" tabindex="0"><time>07:30 - 09:00</time><strong>Toán 9A</strong><span>Cô Lan · Phòng online 2</span></article><article data-modal-target="lesson-detail" role="button" tabindex="0"><time>15:30 - 17:00</time><strong>Tự học Toán</strong><span>Ôn bài chương 3</span></article></div></article>
+            <article class="panel upcoming-panel"><header class="panel-head"><div class="panel-title"><span class="panel-icon b-violet"><span class="icon" data-icon="calendar"></span></span><h3>Buổi học sắp tới</h3></div></header><div class="upcoming-list"><button data-modal-target="lesson-detail" type="button"><span>Vào ngày mai (Thứ 4)</span><strong>19:00 - 20:30</strong><small>Toán 9A · Cô Lan - Phòng online 2</small></button><button data-modal-target="lesson-detail" type="button"><span>Thứ 6, 17/05</span><strong>19:00 - 20:30</strong><small>Toán 9A · Cô Lan - Phòng online 2</small></button></div></article>
+            <article class="note-card note-yellow"><h3>Nhắc nhở</h3><ul><li>Đến lớp đúng giờ.</li><li>Chuẩn bị sách vở và dụng cụ.</li><li>Xem bài tập trước khi vào lớp.</li></ul></article>
+          </aside>
+        </section>
+      </div>
+    </section>
+    <div class="dock-wrap"><svg class="dock-bg" viewBox="0 0 524 56"><path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" /></svg></div>
+    <nav class="dock"><a data-page-link href="overview.html" title="Tổng quan"><span><span class="icon" data-icon="layout"></span></span></a><a data-page-link href="schedule.html" title="Lịch học"><span><span class="icon" data-icon="calendar"></span></span></a><a data-page-link href="assignments.html" title="Bài tập"><span><span class="icon" data-icon="file"></span></span></a><a data-page-link href="resources.html" title="Tài liệu"><span><span class="icon" data-icon="book"></span></span></a><a data-page-link href="discussion.html" title="Trao đổi"><span><span class="icon" data-icon="message"></span></span></a><a href="overview.html#ai" title="Trợ lý AI"><span><span class="icon" data-icon="sparkles"></span></span></a></nav>
+    <div class="drawer-overlay" data-drawer-overlay></div><aside class="class-drawer" data-class-drawer><div class="drawer-head"><h3>Lớp của tôi</h3><button class="drawer-close" data-close-drawer type="button"><span class="icon" data-icon="close"></span></button></div><div class="class-notes"><button class="note-tab paper-yellow active" type="button"><strong>Toán 9A</strong><span>Cô Lan</span><small>Đang theo học</small></button><button class="note-tab paper-blue" type="button"><strong>Tiếng Anh 9A</strong><span>Thầy Nam</span><small>Đang theo học</small></button><button class="note-tab add" data-modal-target="join-class" type="button">+ Thêm lớp</button></div></aside>
+
+    <div class="modal-backdrop" data-modal="join-class" role="presentation">
+      <section aria-label="Tham gia lớp học" aria-modal="true" class="student-modal join-modal" role="dialog">
+        <button aria-label="Đóng popup tham gia lớp học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header"><span class="modal-icon b-green"><span class="icon" data-icon="plus"></span></span><div><h2>Tham gia lớp học</h2><p>Nhập mã lớp hoặc link mời do giáo viên cung cấp để thêm lớp vào sổ học tập.</p></div></header>
+        <div class="join-grid"><label><span>Mã lớp</span><input placeholder="Ví dụ: MATH9A" /></label><label><span>Link mời</span><input placeholder="https://tuteclass.vn/join/..." /></label></div>
+        <div class="modal-actions"><button data-close-modal type="button">Hủy</button><button class="primary" type="button">Tham gia lớp</button></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" data-modal="lesson-detail" role="presentation">
+      <section aria-labelledby="lesson-popup-title" aria-modal="true" class="student-modal lesson-modal" role="dialog">
+        <button aria-label="Đóng chi tiết buổi học" class="modal-close" data-close-modal type="button"><span class="icon" data-icon="close"></span></button>
+        <header class="modal-header">
+          <span class="modal-icon b-blue"><span class="icon" data-icon="calendar"></span></span>
+          <div>
+            <h2 id="lesson-popup-title">Buổi học Toán 9A - Hàm số bậc hai</h2>
+            <p>Chi tiết nội dung, ghi chú, tài liệu đính kèm và trao đổi của buổi học.</p>
+            <div class="lesson-meta"><span><span class="icon" data-icon="user"></span>Cô Lan</span><span><span class="icon" data-icon="clock"></span>19:00 - 20:30, Thứ 6</span><span><span class="icon" data-icon="link"></span>Phòng online 2</span></div>
+          </div>
+        </header>
+        <div class="lesson-popup-grid">
+          <article class="modal-panel">
+            <div class="lesson-panel-title"><span class="icon b-green" data-icon="file"></span><h3>Nội dung buổi học</h3></div>
+            <ol class="lesson-agenda"><li><b>1</b><p>Ôn lại định nghĩa và dạng tổng quát của hàm số bậc hai.</p></li><li><b>2</b><p>Phân tích đồ thị parabol qua các ví dụ trong SGK.</p></li><li><b>3</b><p>Luyện bài tập nhận biết hệ số và trục đối xứng.</p></li></ol>
+          </article>
+          <article class="modal-panel">
+            <div class="lesson-panel-title"><span class="icon b-violet" data-icon="checklist"></span><h3>Ghi chú bài học</h3></div>
+            <ul class="lesson-notes"><li>Chú ý dấu của hệ số a khi xét chiều mở của parabol.</li><li>Ghi lại các lỗi sai khi thay tọa độ vào công thức.</li><li>Chuẩn bị câu hỏi cho phần luyện tập nâng cao.</li></ul>
+          </article>
+        </div>
+        <div class="lesson-popup-grid bottom">
+          <article class="modal-panel">
+            <div class="lesson-panel-title"><span class="icon b-blue" data-icon="book"></span><h3>Tài liệu đính kèm</h3></div>
+            <div class="lesson-files"><article class="lesson-file"><div class="lesson-file-icon">PDF</div><div><strong>Tóm tắt hàm số bậc hai.pdf</strong><span>2.4 MB</span></div><button type="button"><span class="icon" data-icon="file"></span></button></article><article class="lesson-file"><div class="lesson-file-icon">DOC</div><div><strong>Phiếu luyện tập buổi 16.docx</strong><span>840 KB</span></div><button type="button"><span class="icon" data-icon="file"></span></button></article></div>
+          </article>
+          <article class="modal-panel">
+            <div class="lesson-panel-title"><span class="icon b-violet" data-icon="checklist"></span><h3>Bài tập liên quan</h3></div>
+            <p class="lesson-assignment-text">Hoàn thành bài tập chương 3 trước 17:00 thứ Sáu. Có 12 câu trắc nghiệm và 3 câu tự luận ngắn.</p>
+            <button class="modal-primary-button" type="button">Đi tới bài tập</button>
+          </article>
+          <article class="modal-panel">
+            <div class="lesson-panel-title"><span class="icon b-rose" data-icon="message"></span><h3>Trao đổi của buổi học</h3></div>
+            <div class="lesson-discussion-list" data-lesson-comments><article class="lesson-comment"><div class="lesson-avatar">CL</div><div><strong>Cô Lan</strong><span>08:15</span><p>Các em xem trước ví dụ 2 và ghi lại phần chưa rõ nhé.</p></div><div class="lesson-like">♡ 4</div></article><article class="lesson-comment"><div class="lesson-avatar">MA</div><div><strong>Minh Anh</strong><span>09:10</span><p>Em chưa hiểu bước xác định đỉnh parabol ạ.</p></div><div class="lesson-like">♡ 1</div></article></div>
+            <div class="lesson-comment-form"><input placeholder="Viết bình luận..." /><button data-append-comment type="button"><span class="icon" data-icon="send"></span></button></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../scripts/icons.js"></script><script src="../scripts/app.js"></script>
+</body>
+</html>
