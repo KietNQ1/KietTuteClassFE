@@ -10,6 +10,13 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  document.querySelectorAll("[data-dock-link]").forEach(function (btn) {
+    if (btn.getAttribute("data-dock-link") === currentPath) {
+      document.querySelectorAll(".dock-btn").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+    }
+  });
+
   function closeDrawer() {
     if (drawer) drawer.classList.remove("open");
     if (overlay) overlay.classList.remove("open");
