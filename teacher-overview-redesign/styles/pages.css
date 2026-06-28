@@ -1,6 +1,9 @@
 @import "./components.css";
 @import "./calendar.css";
 @import "./modals.css";
+@import "./materials.css";
+@import "./homework.css";
+@import "./messages.css";
 
 .note-tab.chung-tab::before { display: none; }
 .note-tab.chung-tab .cls { color: var(--accent); }
