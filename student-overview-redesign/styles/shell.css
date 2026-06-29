@@ -184,7 +184,8 @@
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  padding: 16px 28px 82px;
+  padding: 16px 28px 64px;
+  transition: padding-bottom .22s ease;
 }
 
 .class-row {
@@ -240,6 +241,7 @@
   height: 56px;
   margin: 0 auto;
   pointer-events: none;
+  transition: transform .24s ease;
 }
 
 .dock-bg {
@@ -263,6 +265,70 @@
   gap: 8px;
   width: 292px;
   margin: 0 auto;
+  transition: transform .24s ease;
+}
+
+.dock-toggle {
+  position: absolute;
+  bottom: 53px;
+  left: 50%;
+  z-index: 47;
+  display: grid;
+  width: 120px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: bottom .24s ease, opacity .16s ease;
+}
+
+.dock-wrap:hover ~ .dock-toggle,
+.dock:hover ~ .dock-toggle,
+.dock-toggle:hover,
+.dock-toggle:focus-visible {
+  opacity: 1;
+}
+
+.dock-toggle:hover,
+.dock-toggle:focus-visible {
+  color: var(--accent);
+  outline: 0;
+}
+
+.dock-toggle .icon {
+  width: 30px;
+  height: 22px;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 9px 9px 0 0;
+  background: #fff;
+  box-shadow: 0 -5px 14px -9px rgba(29, 35, 48, .4);
+}
+
+.dock-toggle .icon svg {
+  transition: transform .24s ease;
+}
+
+.student-app.dock-collapsed .dock-wrap,
+.student-app.dock-collapsed .dock {
+  transform: translateY(55px);
+}
+
+.student-app.dock-collapsed .dock-toggle {
+  bottom: 0;
+}
+
+.student-app.dock-collapsed .dock-toggle .icon svg {
+  transform: rotate(180deg);
+}
+
+.student-app.dock-collapsed .content {
+  padding-bottom: 28px;
 }
 
 .dock a {
