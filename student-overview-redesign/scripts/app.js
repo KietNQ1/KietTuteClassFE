@@ -7,10 +7,46 @@ window.addEventListener("DOMContentLoaded", () => {
   const modals = document.querySelectorAll("[data-modal]");
   const assignmentViews = document.querySelectorAll("[data-assignment-view]");
   const assignmentViewTriggers = document.querySelectorAll("[data-assignment-view-target]");
+  const app = document.querySelector(".student-app");
+  const dock = document.querySelector(".dock");
 
   document.querySelectorAll("[data-page-link]").forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === currentPath);
   });
+
+  if (app && dock) {
+    const dockToggle = document.createElement("button");
+    dockToggle.className = "dock-toggle";
+    dockToggle.type = "button";
+    dockToggle.title = "Thu gọn thanh điều hướng";
+    dockToggle.setAttribute("aria-label", "Thu gọn thanh điều hướng");
+    dockToggle.innerHTML = '<span class="icon" data-icon="chev"></span>';
+    app.appendChild(dockToggle);
+
+    let dockCollapsed = false;
+    try {
+      dockCollapsed = window.localStorage.getItem("studentDockCollapsed") === "true";
+    } catch (error) {
+      dockCollapsed = false;
+    }
+
+    function setDockCollapsed(collapsed) {
+      app.classList.toggle("dock-collapsed", collapsed);
+      dockToggle.title = collapsed ? "Mở thanh điều hướng" : "Thu gọn thanh điều hướng";
+      dockToggle.setAttribute("aria-label", dockToggle.title);
+      try {
+        window.localStorage.setItem("studentDockCollapsed", String(collapsed));
+      } catch (error) {
+        /* Local previews can disable storage. */
+      }
+    }
+
+    dockToggle.addEventListener("click", () => {
+      setDockCollapsed(!app.classList.contains("dock-collapsed"));
+    });
+    setDockCollapsed(dockCollapsed);
+    if (typeof hydrateIcons === "function") hydrateIcons();
+  }
 
   function showAssignmentView(name) {
     if (!assignmentViews.length) {
