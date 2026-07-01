@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuteClass · Tạo bài tập</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+</head>
+<body class="theme-lam">
+<div class="teacher-app">
+  <header class="topbar">
+    <a href="../../index.html" class="brand">
+      <img src="../../TuteLogo.png" alt="TuteClass" class="brand-logo" />
+    </a>
+    <nav class="hnav">
+      <a href="overview.html" class="hic" data-page-link title="Trang chủ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        <span>Trang chủ</span>
+      </a>
+      <a href="calendar.html" class="hic" data-page-link title="Lịch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span>Lịch</span>
+      </a>
+      <a href="#" class="hic" data-page-link title="Học viên">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Học viên</span>
+      </a>
+      <a href="homework.html" class="hic" data-page-link title="Bài tập">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+        <span>Bài tập</span>
+      </a>
+      <a href="#" class="hic" data-page-link title="Báo cáo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
+        <span>Báo cáo</span>
+      </a>
+      <div class="search">
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="s-input" type="text" placeholder="Tìm kiếm..." />
+      </div>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" type="button" title="Thông báo">
+        <span class="dot"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </button>
+      <button class="profile" type="button" title="Tài khoản">
+        <div class="avatar">NL</div>
+        <div class="meta">
+          <b>Cô Nguyễn Lan</b>
+          <small>Giáo viên</small>
+        </div>
+        <span class="prof-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="content hc-content">
+      <div class="hc-top">
+        <a href="homework.html" class="hc-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Quay lại danh sách bài tập
+        </a>
+
+        <div class="hc-head-row">
+          <div class="hc-head-left">
+            <h1 class="hc-title"><span class="hc-title-icon" aria-hidden="true">🌿</span> Tạo bài tập</h1>
+            <p class="hc-sub" id="hcSub">Giao bài nhanh cho buổi học</p>
+          </div>
+          <div class="hc-head-actions">
+            <button class="hc-btn" type="button">Chế độ xem</button>
+            <button class="hc-btn" type="button">Lưu nháp</button>
+            <button class="hc-btn hc-btn-primary" type="button" id="hcPublishBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/></svg>
+              Tạo bài tập
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hc-layout">
+        <!-- Left: Upload & AI -->
+        <div class="hc-col hc-col-side">
+          <div class="hc-panel hc-panel-upload">
+            <h3 class="hc-panel-title">Upload tài liệu</h3>
+            <div class="hc-panel-body">
+              <div class="hc-upload" role="button" tabindex="0">
+                <div class="hc-upload-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <b>Kéo thả hoặc chọn file</b>
+                <small>PDF, Word, Ảnh (tối đa 20MB)</small>
+              </div>
+              <div class="hc-file-card">
+                <span class="hc-file-icon">PDF</span>
+                <div class="hc-file-info">
+                  <b>De_kiem_tra_45_phut_Toan_9A.pdf</b>
+                  <small>1.24 MB</small>
+                </div>
+                <span class="hc-file-ok" title="Đã tải lên">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hc-panel hc-panel-ai">
+            <h3 class="hc-panel-title">AI đang xử lý tài liệu...</h3>
+            <div class="hc-panel-body">
+              <div class="hc-ai-progress">
+                <div class="hc-ai-progress-top">
+                  <span>Tiến độ</span>
+                  <b id="hcAiPercent">85%</b>
+                </div>
+                <div class="hc-ai-bar"><div class="hc-ai-bar-fill" id="hcAiBar" style="width:85%"></div></div>
+              </div>
+              <div class="hc-ai-checklist" id="hcAiChecklist"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: AI results -->
+        <div class="hc-results">
+          <div class="hc-results-head">
+            <h3>Kết quả phân tích AI</h3>
+            <div class="hc-stats" role="tablist" aria-label="Lọc câu hỏi">
+              <button class="hc-stat active" type="button" data-hc-filter="all" aria-selected="true">
+                <b id="hcStatTotal">12</b>Tổng số câu hỏi
+              </button>
+              <button class="hc-stat hc-stat--blue" type="button" data-hc-filter="mc" aria-selected="false">
+                <b id="hcStatMc">8</b>Trắc nghiệm
+              </button>
+              <button class="hc-stat hc-stat--amber" type="button" data-hc-filter="essay" aria-selected="false">
+                <b id="hcStatEssay">4</b>Tự luận
+              </button>
+            </div>
+          </div>
+          <div class="hc-questions" id="hcQuestions"></div>
+        </div>
+
+        <!-- Right: Settings -->
+        <div class="hc-col hc-col-side hc-col-settings">
+          <div class="hc-panel hc-settings">
+            <h3 class="hc-panel-title">Thiết lập bài tập</h3>
+            <div class="hc-panel-body">
+              <div class="hc-field">
+                <label for="hcTitle">Tiêu đề bài tập</label>
+                <input type="text" id="hcTitle" value="Đề kiểm tra 45 phút - Toán 9A (Chương 3)" />
+              </div>
+              <div class="hc-field">
+                <label for="hcDesc">Mô tả</label>
+                <textarea id="hcDesc" placeholder="Nhập mô tả ngắn cho bài tập...">Kiểm tra kiến thức chương 3: Phương trình bậc hai và hệ phương trình.</textarea>
+              </div>
+              <div class="hc-field">
+                <label>Lớp áp dụng</label>
+                <div class="hc-tags" id="hcClassTags">
+                  <span class="hc-tag">Toán 9A</span>
+                  <span class="hc-tag">Toán 9B</span>
+                  <span class="hc-tag">Toán 9C</span>
+                  <button class="hc-tag-add" type="button">+ Thêm lớp</button>
+                </div>
+              </div>
+              <div class="hc-field">
+                <label for="hcSession">Buổi học liên quan</label>
+                <select id="hcSession">
+                  <option>Buổi 12 - Phương trình bậc hai (15/05/2024)</option>
+                  <option selected>Buổi 13 - Hệ phương trình (17/05/2024)</option>
+                  <option>Buổi 14 - Bất phương trình (20/05/2024)</option>
+                </select>
+              </div>
+              <div class="hc-field-row">
+                <div class="hc-field">
+                  <label for="hcDuration">Thời gian làm bài (phút)</label>
+                  <input type="number" id="hcDuration" value="45" min="1" />
+                </div>
+                <div class="hc-field">
+                  <label for="hcDeadline">Hạn nộp bài</label>
+                  <input type="text" id="hcDeadline" value="20/05/2024 23:59" />
+                </div>
+              </div>
+              <div class="hc-divider"></div>
+              <div class="hc-field">
+                <label>Tài liệu đính kèm</label>
+                <div class="hc-attach">
+                  <span class="hc-attach-icon">PDF</span>
+                  <span class="hc-attach-name">Bang_cong_thuc_Toan_9.pdf</span>
+                </div>
+                <button class="hc-tag-add" type="button" style="width:100%;padding:8px">+ Thêm tài liệu</button>
+              </div>
+              <div class="hc-divider"></div>
+              <div class="hc-field">
+                <label>Tùy chọn khác</label>
+                <label class="hc-check">
+                  <input type="checkbox" />
+                  Cho phép học sinh xem đáp án sau khi nộp bài
+                </label>
+                <label class="hc-check">
+                  <input type="checkbox" checked />
+                  Hiển thị kết quả ngay sau khi nộp bài
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dock-wrap">
+    <svg class="dock-bg" viewBox="0 0 524 56" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 56 0 L 468 0 A 26 26 0 0 1 494 26 A 30 30 0 0 0 524 56 L 0 56 A 30 30 0 0 0 30 26 A 26 26 0 0 1 56 0 Z" />
+    </svg>
+    <nav class="dock">
+      <button class="dock-btn" type="button" title="Tổng quan" onclick="window.location.href='overview.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>
+        <span>Tổng quan</span>
+      </button>
+      <button class="dock-btn" type="button" title="Lịch dạy" onclick="window.location.href='calendar.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <span>Lịch dạy</span>
+      </button>
+      <button class="dock-btn" type="button" title="Học viên">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span>Học viên</span>
+      </button>
+      <button class="dock-btn" type="button" title="Học phí">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span>
+        <span>Học phí</span>
+      </button>
+      <button class="dock-btn active" type="button" title="Bài tập" onclick="window.location.href='homework.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+        <span>Bài tập</span>
+      </button>
+      <button class="dock-btn" type="button" title="Tài liệu" onclick="window.location.href='materials.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <span>Tài liệu</span>
+      </button>
+      <button class="dock-btn" type="button" title="Trao đổi" onclick="window.location.href='messages.html'">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span>Trao đổi</span>
+      </button>
+      <button class="dock-btn" type="button" title="Trợ lý AI">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></span>
+        <span>Trợ lý AI</span>
+      </button>
+    </nav>
+  </div>
+</div>
+
+<script src="../scripts/app.js"></script>
+<script src="../scripts/homework-create.js"></script>
+</body>
+</html>

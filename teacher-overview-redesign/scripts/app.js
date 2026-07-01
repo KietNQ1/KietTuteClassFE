@@ -2,6 +2,9 @@ window.addEventListener("DOMContentLoaded", function () {
   var drawer = document.querySelector("[data-class-drawer]");
   var overlay = document.querySelector("[data-drawer-overlay]");
   var currentPath = window.location.pathname.split("/").pop();
+  var app = document.querySelector(".teacher-app");
+  var dockWrap = document.querySelector(".dock-wrap");
+  var dock = document.querySelector(".dock");
 
   document.querySelectorAll(".hnav .hic[data-page-link], .hnav a.hic").forEach(function (link) {
     var href = link.getAttribute("href");
@@ -16,6 +19,43 @@ window.addEventListener("DOMContentLoaded", function () {
       btn.classList.add("active");
     }
   });
+
+  if (app && dockWrap && dock) {
+    var dockToggle = document.createElement("button");
+    dockToggle.className = "dock-toggle";
+    dockToggle.type = "button";
+    dockToggle.title = "Thu gọn thanh điều hướng";
+    dockToggle.setAttribute("aria-label", "Thu gọn thanh điều hướng");
+    dockToggle.innerHTML =
+      '<span class="icon">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+      '<path d="m6 9 6 6 6-6"/>' +
+      "</svg></span>";
+    app.appendChild(dockToggle);
+
+    var dockCollapsed = false;
+    try {
+      dockCollapsed = window.localStorage.getItem("teacherDockCollapsed") === "true";
+    } catch (error) {
+      dockCollapsed = false;
+    }
+
+    function setDockCollapsed(collapsed) {
+      app.classList.toggle("dock-collapsed", collapsed);
+      dockToggle.title = collapsed ? "Mở thanh điều hướng" : "Thu gọn thanh điều hướng";
+      dockToggle.setAttribute("aria-label", dockToggle.title);
+      try {
+        window.localStorage.setItem("teacherDockCollapsed", String(collapsed));
+      } catch (error) {
+        /* Local previews can disable storage. */
+      }
+    }
+
+    dockToggle.addEventListener("click", function () {
+      setDockCollapsed(!app.classList.contains("dock-collapsed"));
+    });
+    setDockCollapsed(dockCollapsed);
+  }
 
   function closeDrawer() {
     if (drawer) drawer.classList.remove("open");

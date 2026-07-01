@@ -1,0 +1,23 @@
+{
+  "name": "tuteclass-solution-demos",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Remotion demos for TuteClass landing page solution cards",
+  "scripts": {
+    "start": "remotion studio",
+    "build:calendar": "remotion render src/index.ts SolutionCalendar ../demos/solution-calendar.mp4 --scale=2 --crf=16 --color-space=bt709",
+    "build:learning": "remotion render src/index.ts SolutionLearning ../demos/solution-learning.mp4 --scale=2 --crf=16 --color-space=bt709",
+    "build:ai": "remotion render src/index.ts SolutionAI ../demos/solution-ai.mp4 --scale=2 --crf=16 --color-space=bt709",
+    "build:all": "npm run build:calendar && npm run build:learning && npm run build:ai"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.272",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.272"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.7.2"
+  }
+}
