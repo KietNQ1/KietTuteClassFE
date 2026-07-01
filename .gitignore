@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Dev tooling — not deployed to GitHub Pages
+remotion-demos/node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
