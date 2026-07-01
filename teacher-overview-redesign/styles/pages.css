@@ -3,7 +3,10 @@
 @import "./modals.css";
 @import "./materials.css";
 @import "./homework.css";
+@import "./grading.css";
+@import "./homework-create.css";
 @import "./messages.css";
+@import "./theme-lam.css";
 
 .note-tab.chung-tab::before { display: none; }
 .note-tab.chung-tab .cls { color: var(--accent); }

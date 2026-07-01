@@ -182,7 +182,8 @@ var hwClassData = {
         needGrade: 6,
         assignments: [
           { type: "pdf", title: "Bài tập chương 2", submitted: 28, total: 30, needGrade: 6 },
-          { type: "docx", title: "Chứng minh đồ thị hàm số", submitted: 26, total: 30, needGrade: 4 }
+          { type: "docx", title: "Chứng minh đồ thị hàm số", submitted: 26, total: 30, needGrade: 4 },
+          { type: "quiz", title: "Khảo sát và vẽ đồ thị hàm số", submitted: 21, total: 30, needGrade: 5 }
         ]
       }
     ],
@@ -310,13 +311,67 @@ function renderAssignMeta(a) {
   return a.submitted + "/" + a.total + " nộp · " + gradePart;
 }
 
+function openCreateHomework(ctx) {
+  try {
+    sessionStorage.setItem("tcCreateHwCtx", JSON.stringify(ctx || {
+      className: hwState.className,
+      source: "general"
+    }));
+  } catch (e) { /* ignore */ }
+  window.location.href = "homework-create.html";
+}
+
+function openAssignmentGrade(ctx) {
+  try {
+    sessionStorage.setItem("tcGradeCtx", JSON.stringify(ctx));
+  } catch (e) { /* ignore */ }
+  window.location.href = "homework-grade.html";
+}
+
+function openGradeFromSession(sessionNum, assignIndex) {
+  var data = hwClassData[hwState.className];
+  if (!data) return;
+  var session = data.sessions.find(function (s) { return s.num === sessionNum; });
+  if (!session || !session.assignments[assignIndex]) return;
+  var a = session.assignments[assignIndex];
+  openAssignmentGrade({
+    className: hwState.className,
+    source: "session",
+    sessionNum: sessionNum,
+    sessionTitle: session.title,
+    sessionDate: session.date,
+    assignIndex: assignIndex,
+    title: a.title,
+    type: a.type,
+    submitted: a.submitted,
+    total: a.total,
+    needGrade: a.needGrade
+  });
+}
+
+function openGradeFromCourse(assignIndex) {
+  var data = hwClassData[hwState.className];
+  if (!data || !data.courseAssignments[assignIndex]) return;
+  var a = data.courseAssignments[assignIndex];
+  openAssignmentGrade({
+    className: hwState.className,
+    source: "course",
+    assignIndex: assignIndex,
+    title: a.title,
+    type: a.type,
+    submitted: a.submitted,
+    total: a.total,
+    needGrade: a.needGrade
+  });
+}
+
 function renderAssignRows(session) {
   if (!session.assignments.length) {
     return '<div class="hw-assign-empty">Chưa có bài tập</div>';
   }
   return session.assignments.map(function (a, i) {
     return (
-      '<div class="hw-assign-row">' +
+      '<div class="hw-assign-row" data-open-grade="1" data-session-num="' + session.num + '" data-assign-idx="' + i + '" role="button" tabindex="0">' +
       '<span class="hw-assign-num">' + (i + 1) + "</span>" +
       renderAssignIcon(a.type) +
       '<span class="hw-assign-title">' + a.title + "</span>" +
@@ -342,7 +397,7 @@ function renderSessionStats(session) {
 
 function renderAddAssignBtn(sessionNum) {
   return (
-    '<button class="hw-add-assign" type="button" data-add-assign="' + sessionNum + '" title="Thêm bài tập" aria-label="Thêm bài tập">' +
+    '<button class="hw-add-assign" type="button" data-create-hw="1" data-session-num="' + sessionNum + '" title="Thêm bài tập" aria-label="Thêm bài tập">' +
     HW_ADD_SVG + "</button>"
   );
 }
@@ -488,9 +543,9 @@ function renderCourseList(className) {
     return;
   }
 
-  list.innerHTML = data.courseAssignments.map(function (a) {
+  list.innerHTML = data.courseAssignments.map(function (a, i) {
     return (
-      '<div class="hw-course-row">' +
+      '<div class="hw-course-row" data-open-grade="1" data-course-idx="' + i + '" role="button" tabindex="0">' +
       renderAssignIcon(a.type) +
       '<div><span class="hw-course-tag">' + a.tag + "</span>" +
       '<div class="hw-assign-title" style="margin-top:6px">' + a.title + "</div>" +
@@ -547,13 +602,51 @@ function renderStudentList(className) {
   }).join("");
 }
 
+function bindCourseEvents() {
+  var list = document.getElementById("hwCourseList");
+  if (!list || list.dataset.hwCourseBound === "1") return;
+  list.dataset.hwCourseBound = "1";
+
+  list.addEventListener("click", function (e) {
+    if (e.target.closest(".hw-assign-menu")) return;
+    var row = e.target.closest("[data-open-grade][data-course-idx]");
+    if (row) {
+      openGradeFromCourse(parseInt(row.getAttribute("data-course-idx"), 10));
+    }
+  });
+}
+
 function bindSessionEvents() {
   var list = document.getElementById("hwSessionList");
   if (!list || list.dataset.hwBound === "1") return;
   list.dataset.hwBound = "1";
 
   list.addEventListener("click", function (e) {
-    if (e.target.closest("[data-add-assign]")) return;
+    var addBtn = e.target.closest("[data-create-hw]");
+    if (addBtn) {
+      var sessionNum = parseInt(addBtn.getAttribute("data-session-num"), 10);
+      var data = hwClassData[hwState.className];
+      var session = data && data.sessions.find(function (s) { return s.num === sessionNum; });
+      openCreateHomework({
+        className: hwState.className,
+        source: "session",
+        sessionNum: sessionNum,
+        sessionTitle: session ? session.title : "",
+        sessionDate: session ? session.date : ""
+      });
+      return;
+    }
+
+    if (e.target.closest(".hw-assign-menu")) return;
+
+    var gradeRow = e.target.closest("[data-open-grade][data-session-num]");
+    if (gradeRow) {
+      openGradeFromSession(
+        parseInt(gradeRow.getAttribute("data-session-num"), 10),
+        parseInt(gradeRow.getAttribute("data-assign-idx"), 10)
+      );
+      return;
+    }
 
     var toggle = e.target.closest("[data-toggle-session]");
     if (toggle) {
@@ -622,7 +715,16 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  var createBtn = document.getElementById("hwCreateBtn");
+  if (createBtn) {
+    createBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openCreateHomework({ className: hwState.className, source: "general" });
+    });
+  }
+
   bindSessionEvents();
+  bindCourseEvents();
 
   document.querySelectorAll("[data-hw-filter]").forEach(function (btn) {
     btn.addEventListener("click", function () {

@@ -486,6 +486,7 @@
 }
 
 .hw-course-row {
+  cursor: pointer;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
