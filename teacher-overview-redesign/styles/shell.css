@@ -273,6 +273,7 @@
       width: 524px;
       height: 56px;
       z-index: 50;
+      transition: transform .24s ease;
     }
     .dock-bg {
       position: absolute;
@@ -282,6 +283,77 @@
       filter: drop-shadow(0 -6px 16px rgba(29, 35, 48, 0.12));
     }
     .dock-bg path { fill: #ffffff; }
+
+    .dock-toggle {
+      position: absolute;
+      bottom: 53px;
+      left: 50%;
+      z-index: 52;
+      display: grid;
+      width: 120px;
+      height: 28px;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateX(-50%);
+      transition: bottom .24s ease, opacity .16s ease;
+    }
+
+    .dock-wrap:hover ~ .dock-toggle,
+    .dock-toggle:hover,
+    .dock-toggle:focus-visible {
+      opacity: 1;
+    }
+
+    .dock-toggle:hover,
+    .dock-toggle:focus-visible {
+      color: var(--accent);
+      outline: 0;
+    }
+
+    .dock-toggle .icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 22px;
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 9px 9px 0 0;
+      background: #fff;
+      box-shadow: 0 -5px 14px -9px rgba(29, 35, 48, .4);
+    }
+
+    .dock-toggle .icon svg {
+      width: 14px;
+      height: 14px;
+      transition: transform .24s ease;
+    }
+
+    .teacher-app.dock-collapsed .dock-wrap {
+      transform: translateY(55px);
+    }
+
+    .teacher-app.dock-collapsed .dock-toggle {
+      bottom: 0;
+      opacity: 1;
+    }
+
+    .teacher-app.dock-collapsed .dock-toggle .icon svg {
+      transform: rotate(180deg);
+    }
+
+    .teacher-app.dock-collapsed .content {
+      padding-bottom: 28px;
+    }
+
+    .teacher-app.dock-collapsed .content.gr-content {
+      padding-bottom: 12px;
+    }
 
     /* ----- page header + class tabs ----- */
     .page-head {

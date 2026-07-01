@@ -1,0 +1,362 @@
+/* LamUI theme — teacher shell (body.theme-lam) */
+
+body.theme-lam {
+  --bg: #fffaf1;
+  --surface: #ffffff;
+  --ink: #0b2f66;
+  --ink-soft: #385178;
+  --muted: #7d8aa0;
+  --line: #ecd9bd;
+  --sidebar: #fff8ea;
+
+  --accent: #ff5c00;
+  --accent-soft: #fff0e2;
+
+  --green: #21b37b;
+  --green-bg: #e8f7ef;
+  --amber: #f6a23a;
+  --amber-bg: #fff7ea;
+  --rose: #ec4899;
+  --rose-bg: #fce7f3;
+  --blue: #2f7cff;
+  --blue-bg: #e8f0ff;
+  --violet: #8b5cf6;
+  --violet-bg: #f3ecff;
+
+  --r-lg: 24px;
+  --r-md: 20px;
+  --r-sm: 16px;
+  --shadow: 0 24px 70px rgba(15, 47, 102, 0.08);
+  --shadow-sm: 0 8px 24px rgba(15, 47, 102, 0.06);
+
+  background: #fff4e3;
+}
+
+body.theme-lam .teacher-app {
+  background: var(--bg);
+}
+
+/* Topbar */
+body.theme-lam .topbar {
+  background: #fff8ea;
+  border-bottom-color: var(--line);
+}
+
+body.theme-lam .search {
+  background: #fffaf1;
+  border: 1px solid var(--line);
+}
+
+body.theme-lam .icon-btn {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .profile:hover {
+  background: var(--accent-soft);
+}
+
+body.theme-lam .profile .avatar {
+  background: linear-gradient(135deg, #0b2f66, #1a4a8a);
+}
+
+body.theme-lam .icon-btn .dot {
+  background: var(--accent);
+  border-color: #fff8ea;
+}
+
+body.theme-lam .hic.active::after {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(255, 92, 0, 0.35);
+}
+
+/* Main stage */
+body.theme-lam .main {
+  background: var(--bg);
+}
+
+body.theme-lam .page-head h1,
+body.theme-lam .kpi .value,
+body.theme-lam .panel-head h3 {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+body.theme-lam .title-switch b {
+  color: var(--accent);
+}
+
+body.theme-lam .date-pill {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+  color: var(--accent);
+  border-radius: 16px;
+}
+
+body.theme-lam .date-pill svg {
+  color: var(--accent);
+}
+
+/* KPI cards */
+body.theme-lam .kpi,
+body.theme-lam .panel {
+  border-color: var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+body.theme-lam .kpi:nth-child(3) {
+  background: linear-gradient(180deg, #fff0e2 0%, #ffffff 55%);
+  border-color: #ffe1b8;
+}
+
+body.theme-lam .kpi .trend.b-rose {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Panels & schedule */
+body.theme-lam .sched-item {
+  border-radius: 20px;
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .sched-item:first-child {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+}
+
+body.theme-lam .sched-item:first-child .info b {
+  color: var(--accent);
+}
+
+body.theme-lam .panel-head .more {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+body.theme-lam .panel-head .more:hover {
+  color: #0b2f66;
+}
+
+/* Donut & mini stats */
+body.theme-lam .mini {
+  background: #fffaf1;
+  border-color: var(--line);
+  border-radius: 16px;
+}
+
+body.theme-lam .mini .v.t-green {
+  color: var(--ink);
+}
+
+body.theme-lam .bar {
+  background: #fff4e3;
+}
+
+/* Segmented control */
+body.theme-lam .seg {
+  background: #fff4e3;
+  border-color: var(--line);
+}
+
+body.theme-lam .seg-btn.active {
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(15, 47, 102, 0.1);
+}
+
+body.theme-lam .todo li.done .check {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+body.theme-lam .note-list .pin {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Drawer */
+body.theme-lam .drawer {
+  background: #fffaf1;
+  box-shadow: 18px 0 50px -22px rgba(11, 47, 102, 0.25);
+}
+
+body.theme-lam .drawer-head {
+  background: #fff8ea;
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-lam .drawer-head h3 {
+  color: var(--ink);
+}
+
+body.theme-lam .note-tab.active {
+  outline-color: var(--accent);
+  box-shadow: 0 20px 34px -14px rgba(255, 92, 0, 0.35);
+}
+
+/* Dock */
+body.theme-lam .dock-bg path {
+  fill: #fff8ea;
+}
+
+body.theme-lam .dock-btn .ic {
+  background: #fffaf1;
+  border: 1px solid var(--line);
+}
+
+body.theme-lam .dock-btn.active .ic {
+  background: #0b2f66;
+  color: #fff;
+  border-color: #0b2f66;
+  box-shadow: 0 12px 28px rgba(11, 47, 102, 0.25);
+}
+
+body.theme-lam .dock-btn:hover .ic {
+  border-color: var(--accent);
+}
+
+body.theme-lam .b-amber {
+  background: var(--amber-bg);
+  color: #a94d00;
+}
+
+body.theme-lam .dock-btn.active {
+  color: var(--accent);
+}
+
+/* ── Calendar ── */
+body.theme-lam .cal-layout,
+body.theme-lam .cal-week-sidebar {
+  --cal-surface: #fffaf1;
+}
+
+body.theme-lam .cal-toolbar,
+body.theme-lam .wst-card,
+body.theme-lam .week-progress-card,
+body.theme-lam .month-cal-panel {
+  border-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+body.theme-lam .cal-day-head.today {
+  background: var(--accent-soft);
+}
+
+body.theme-lam .view-btn {
+  border-color: var(--line);
+  background: #fffaf1;
+}
+
+body.theme-lam .tb-btn {
+  border-color: var(--line);
+  background: #fffaf1;
+}
+
+body.theme-lam .tb-btn:hover {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+}
+
+/* ── Homework & Materials ── */
+body.theme-lam .hw-panel,
+body.theme-lam .mat-panel,
+body.theme-lam .hw-sidebar-card,
+body.theme-lam .mat-sidebar-card,
+body.theme-lam .hw-session-block,
+body.theme-lam .mat-session-block {
+  border-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+body.theme-lam .hw-session-block.is-expanded,
+body.theme-lam .mat-session-block.is-expanded {
+  border-color: #ffe1b8;
+  background: linear-gradient(180deg, #fff8f0 0%, #fff 40%);
+}
+
+body.theme-lam .hw-filter,
+body.theme-lam .mat-filter {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .hw-btn-primary,
+body.theme-lam .mat-btn-primary {
+  background: #0b2f66;
+  box-shadow: 0 12px 28px rgba(11, 47, 102, 0.2);
+}
+
+body.theme-lam .hw-btn-primary:hover,
+body.theme-lam .mat-btn-primary:hover {
+  background: var(--accent);
+  filter: none;
+}
+
+body.theme-lam .hw-tab,
+body.theme-lam .mat-tab {
+  color: var(--muted);
+}
+
+body.theme-lam .hw-icon-btn:hover {
+  border-color: var(--line);
+  background: var(--accent-soft);
+}
+
+/* ── Messages ── */
+body.theme-lam .msg-list-panel,
+body.theme-lam .msg-chat-panel,
+body.theme-lam .msg-info-panel {
+  background: var(--surface);
+}
+
+body.theme-lam .msg-chat-body {
+  background: #fffaf1;
+}
+
+body.theme-lam .msg-search {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .msg-compose-input {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .msg-send-btn {
+  background: #0b2f66;
+  box-shadow: 0 8px 20px rgba(11, 47, 102, 0.25);
+}
+
+body.theme-lam .msg-send-btn:hover {
+  background: var(--accent);
+}
+
+body.theme-lam .msg-conv-unread {
+  background: var(--accent);
+}
+
+body.theme-lam .msg-stat-card {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+/* ── Modals (calendar lesson, attendance) ── */
+body.theme-lam .lesson-modal,
+body.theme-lam .att-modal,
+body.theme-lam .day-sess-modal,
+body.theme-lam .mat-session-drawer {
+  border-color: var(--line);
+}
+
+body.theme-lam .lm-link-submit,
+body.theme-lam .mat-lm-link-submit {
+  background: #0b2f66;
+}
+
+body.theme-lam .lm-link-submit:hover,
+body.theme-lam .mat-lm-link-submit:hover {
+  background: var(--accent);
+}
