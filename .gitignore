@@ -4,6 +4,9 @@ node_modules/
 # Dev tooling — not deployed to GitHub Pages
 remotion-demos/node_modules/
 
+# Generated documentation diagrams
+docs/
+
 # OS / editor
 .DS_Store
 Thumbs.db
