@@ -1,0 +1,346 @@
+/* LamUI color theme shared with the teacher workspace. */
+
+body.theme-lam {
+  --bg: #fffaf1;
+  --surface: #ffffff;
+  --ink: #0b2f66;
+  --ink-soft: #385178;
+  --muted: #7d8aa0;
+  --line: #ecd9bd;
+
+  --accent: #ff5c00;
+  --accent-soft: #fff0e2;
+
+  --green: #21b37b;
+  --green-bg: #e8f7ef;
+  --amber: #f6a23a;
+  --amber-bg: #fff7ea;
+  --rose: #ec4899;
+  --rose-bg: #fce7f3;
+  --blue: #2f7cff;
+  --blue-bg: #e8f0ff;
+  --violet: #8b5cf6;
+  --violet-bg: #f3ecff;
+
+  --r-lg: 24px;
+  --r-md: 20px;
+  --r-sm: 16px;
+  --shadow: 0 24px 70px rgba(15, 47, 102, 0.08);
+  --shadow-sm: 0 8px 24px rgba(15, 47, 102, 0.06);
+
+  background: #fff4e3;
+}
+
+body.theme-lam .student-app,
+body.theme-lam .main {
+  background: var(--bg);
+}
+
+/* Top navigation */
+body.theme-lam .topbar {
+  background: #fff8ea;
+  border-bottom-color: var(--line);
+}
+
+body.theme-lam .search,
+body.theme-lam .icon-btn {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .hnav a:hover,
+body.theme-lam .hnav a.active {
+  color: var(--accent);
+}
+
+body.theme-lam .profile:hover {
+  background: var(--accent-soft);
+}
+
+body.theme-lam .avatar {
+  background: linear-gradient(135deg, #0b2f66, #1a4a8a);
+}
+
+body.theme-lam .icon-btn .dot {
+  background: var(--accent);
+  border-color: #fff8ea;
+}
+
+/* Page heading and actions */
+body.theme-lam .page-head h1,
+body.theme-lam .kpi .value,
+body.theme-lam .panel h3,
+body.theme-lam .assignment-stat-card strong {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+body.theme-lam .page-title-class {
+  color: var(--accent);
+}
+
+body.theme-lam .page-title-class > i,
+body.theme-lam .date-pill {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+  color: var(--accent);
+}
+
+body.theme-lam .page-title-class:hover > i {
+  background: #fff8ea;
+  border-color: var(--accent);
+}
+
+body.theme-lam .primary-action,
+body.theme-lam .assignment-submit,
+body.theme-lam .chat-input button:last-child,
+body.theme-lam .modal-primary-button,
+body.theme-lam .modal-actions .primary {
+  background: #0b2f66;
+  border-color: #0b2f66;
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(11, 47, 102, 0.2);
+}
+
+body.theme-lam .primary-action:hover,
+body.theme-lam .assignment-submit:hover,
+body.theme-lam .chat-input button:last-child:hover,
+body.theme-lam .modal-primary-button:hover,
+body.theme-lam .modal-actions .primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Cards and content surfaces */
+body.theme-lam .kpi,
+body.theme-lam .panel,
+body.theme-lam .assignment-stat-card,
+body.theme-lam .student-cal-toolbar,
+body.theme-lam .student-cal-shell,
+body.theme-lam .student-modal,
+body.theme-lam .day-sessions-modal {
+  border-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+body.theme-lam .kpi:nth-child(3) {
+  background: linear-gradient(180deg, #fff0e2 0%, #ffffff 55%);
+  border-color: #ffe1b8;
+}
+
+body.theme-lam .schedule-item,
+body.theme-lam .week-day,
+body.theme-lam .agenda-list article,
+body.theme-lam .upcoming-list button,
+body.theme-lam .table-row,
+body.theme-lam .assignment-score-summary > div,
+body.theme-lam .assignment-option,
+body.theme-lam .assignment-essay-box,
+body.theme-lam .assignment-result-card,
+body.theme-lam .shared-file {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .schedule-item:first-child,
+body.theme-lam .agenda-list article:first-child {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+}
+
+body.theme-lam .more {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+body.theme-lam .filters button,
+body.theme-lam .seg button,
+body.theme-lam .assignment-view-tabs {
+  background: #fff4e3;
+  border-color: var(--line);
+}
+
+body.theme-lam .filters button.active,
+body.theme-lam .seg button.active,
+body.theme-lam .assignment-view-tabs button.active,
+body.theme-lam .student-cal-view-toggle button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+body.theme-lam .chat-input input,
+body.theme-lam .message p,
+body.theme-lam .student-cal-button {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+/* Calendar */
+body.theme-lam .student-cal-day-head.is-highlighted {
+  background: var(--accent-soft);
+}
+
+body.theme-lam .student-cal-day-head.is-highlighted span {
+  color: var(--accent);
+}
+
+body.theme-lam .student-cal-day-head.is-highlighted strong,
+body.theme-lam .student-month-day.is-highlighted > strong {
+  background: var(--accent);
+}
+
+body.theme-lam .student-cal-day-column.is-highlighted {
+  background-color: rgba(255, 240, 226, 0.62);
+}
+
+body.theme-lam .student-cal-button:hover {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+}
+
+/* Drawer */
+body.theme-lam .class-drawer {
+  background: #fffaf1;
+  box-shadow: 18px 0 50px -22px rgba(11, 47, 102, 0.25);
+}
+
+body.theme-lam .drawer-head {
+  background: #fff8ea;
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-lam .drawer-close {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .note-tab.active {
+  outline-color: var(--accent);
+  box-shadow: 0 20px 34px -14px rgba(255, 92, 0, 0.35);
+}
+
+/* Bottom dock */
+body.theme-lam .dock-bg path {
+  fill: #fff8ea;
+}
+
+body.theme-lam .dock-bg {
+  filter: drop-shadow(0 -6px 16px rgba(11, 47, 102, 0.1));
+}
+
+body.theme-lam .dock a > span {
+  background: #fffaf1;
+  border: 1px solid var(--line);
+}
+
+/* Keep the same functional color mapping as the teacher dock. */
+body.theme-lam .dock a:nth-child(1) > span {
+  color: var(--green);
+}
+
+body.theme-lam .dock a:nth-child(2) > span,
+body.theme-lam .dock a:nth-child(5) > span {
+  color: var(--blue);
+}
+
+body.theme-lam .dock a:nth-child(3) > span {
+  color: var(--rose);
+}
+
+body.theme-lam .dock a:nth-child(4) > span {
+  color: var(--violet);
+}
+
+body.theme-lam .dock a:nth-child(6) > span {
+  color: var(--amber);
+}
+
+body.theme-lam .dock a:hover > span {
+  border-color: var(--accent);
+}
+
+body.theme-lam .dock a.active > span {
+  background: #0b2f66;
+  border-color: #0b2f66;
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(11, 47, 102, 0.25);
+}
+
+body.theme-lam .dock-toggle .icon {
+  background: #fff8ea;
+  border-color: var(--line);
+}
+
+/* Assignment row actions need stronger contrast than status chips. */
+body.theme-lam .assignment-table .table-row button,
+body.theme-lam .assignment-score-table .table-row button {
+  min-width: 56px;
+  border: 1px solid #0b2f66;
+  background: #0b2f66;
+  color: #ffffff;
+  box-shadow: 0 7px 16px rgba(11, 47, 102, 0.18);
+  transition: background 0.18s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+body.theme-lam .assignment-table .table-row button:hover,
+body.theme-lam .assignment-score-table .table-row button:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 9px 20px rgba(255, 92, 0, 0.24);
+  transform: translateY(-1px);
+}
+
+body.theme-lam .assignment-table .table-row button:focus-visible,
+body.theme-lam .assignment-score-table .table-row button:focus-visible {
+  outline: 3px solid rgba(255, 92, 0, 0.24);
+  outline-offset: 2px;
+}
+
+/* Popups */
+body.theme-lam .student-modal,
+body.theme-lam .day-sessions-modal {
+  background: #fffaf1;
+}
+
+body.theme-lam .modal-header,
+body.theme-lam .attendance-modal-header,
+body.theme-lam .grades-modal-header,
+body.theme-lam .due-assignments-header,
+body.theme-lam .schedule-calendar-header,
+body.theme-lam .day-sessions-modal > header {
+  background: #fff8ea;
+  border-bottom-color: var(--line);
+}
+
+body.theme-lam .modal-panel,
+body.theme-lam .invoice-card,
+body.theme-lam .attendance-summary-grid article,
+body.theme-lam .attendance-session,
+body.theme-lam .grades-chart-panel,
+body.theme-lam .grades-summary article,
+body.theme-lam .grades-test-item,
+body.theme-lam .due-assignment-item,
+body.theme-lam .schedule-month-toolbar,
+body.theme-lam .day-session-item {
+  background: #ffffff;
+  border-color: var(--line);
+}
+
+body.theme-lam .modal-close,
+body.theme-lam .modal-soft-button,
+body.theme-lam .schedule-month-toolbar button,
+body.theme-lam .day-sessions-modal header button {
+  background: #fffaf1;
+  border-color: var(--line);
+}
+
+body.theme-lam .modal-close:hover,
+body.theme-lam .modal-soft-button:hover,
+body.theme-lam .schedule-month-toolbar button:hover,
+body.theme-lam .day-sessions-modal header button:hover {
+  background: var(--accent-soft);
+  border-color: #ffe1b8;
+  color: var(--accent);
+}

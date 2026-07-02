@@ -1,6 +1,7 @@
 @import "./components.css";
 @import "./calendar.css";
 @import "./modals.css";
+@import "./theme-lam.css";
 
 .week-board {
   display: grid;
